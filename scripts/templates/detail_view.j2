@@ -10,7 +10,7 @@
         </div>
         <div class="card-body">{% if custom_text %}
             <p>{{ custom_text|safe }}</p>{% else %}
-            <p>The service called <em>{{ title_full }}</em> formerly accesible through this URL: <em>{{ url }}</em> is depreceated since <em>{{ deprecation_date }}</em>. </p>{% endif %}
+            <p>The service called <em>{{ title_full }}</em> formerly accessible through this URL: <em>{{ url }}</em> is depreceated since <em>{{ deprecation_date }}</em>. For futher information please write to <a href="mailto:acdh-helpdesk@oeaw.ac.at">ACDH-CH Helpdesk, acdh-helpdesk@oeaw.ac.at</a></p>{% endif %}
             {% if custom_items %}
             {% for x in custom_items %}
             <h3>{{ x.item_key }}</h3>
