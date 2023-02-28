@@ -3,4 +3,4 @@ tombstone service for deprecated services
 
 ## howto
 
-* add a json-file for your deprecated service in `./data/
+* add a json-file for your deprecated service in `./data/`

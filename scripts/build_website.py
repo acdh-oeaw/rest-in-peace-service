@@ -18,6 +18,7 @@ for x in glob.glob("./html/*.html"):
     os.unlink(x)
 
 files = glob.glob("./data/*.json")
+toc_data = []    
 print("building static content")
 for x in files:
     _, tail = os.path.split(x)
@@ -27,6 +28,10 @@ for x in files:
         data = json.load(f)
     with open(f"./html/{new_name}", "w") as f:
         f.write(detail_view_template.render(data))
+    toc_data.append({
+        "title_short": data.get('title_short', 'no title provided'),
+        "url": new_name
+    })
 
 with open("./html/index.html", "w") as f:
-    f.write(index_template.render({}))
+    f.write(index_template.render({"toc_data": toc_data}))
