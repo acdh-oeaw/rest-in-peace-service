@@ -1,0 +1,29 @@
+{% extends "/partials/base.j2" %}
+{% block title %} RIP: {{ title_short }} {% endblock title %}
+{% block content %}
+
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h1>{{ title_short }}</h1>
+            <h2>{{ title_full }}</h2>
+        </div>
+        <div class="card-body">{% if custom_text %}
+            <p>{{ custom_text|safe }}</p>{% else %}
+            <p>The service called <em>{{ title_full }}</em> formerly accesible through this URL: <em>{{ url }}</em> is depreceated since <em>{{ deprecation_date }}</em>. </p>{% endif %}
+            {% if custom_items %}
+            {% for x in custom_items %}
+            <h3>{{ x.item_key }}</h3>
+            <p>{{ x.item_value|safe }}</p>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <div class="card-footer">
+            <ul>
+                <li><a href="{{ link_to_code_repo }}">{{ link_to_code_repo }}</a></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+{% endblock content %}
