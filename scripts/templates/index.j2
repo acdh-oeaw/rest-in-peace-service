@@ -10,7 +10,12 @@
         <div class="card-body">
         <ul>
             {% for x in toc_data %}
-            <li><a href="{{ x.url }}">{{ x.title_short }}</a></li>
+            <li>
+            <a href="{{ x.url }}">{{ x.title_short }}</a>
+            {% if x.img %}
+            <img src="img/{{ x.img }}" width="400px"></img>
+            {% endif %}
+            </li>
             {% endfor %}
         </ul>
         </div>
