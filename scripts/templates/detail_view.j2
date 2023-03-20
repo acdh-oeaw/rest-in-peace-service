@@ -7,8 +7,14 @@
         <div class="card-header">
             <h1>{{ title_short }}</h1>
             <h2>{{ title_full }}</h2>
+            <h3><a href="{{ url }}">{{ url }}</a></h3>
         </div>
-        <div class="card-body">{% if custom_text %}
+        <div class="card-body">
+        {% if img %}
+        <div><img src="img/{{ img }}"></img></div>
+        {% endif %}
+        
+        {% if custom_text %}
             <p>{{ custom_text|safe }}</p>{% else %}
             <p>The service called <em>{{ title_full }}</em> formerly accessible through this URL: <em>{{ url }}</em> is depreceated since <em>{{ deprecation_date }}</em>. For futher information please write to <a href="mailto:acdh-helpdesk@oeaw.ac.at">ACDH-CH Helpdesk, acdh-helpdesk@oeaw.ac.at</a></p>{% endif %}
             {% if custom_items %}
