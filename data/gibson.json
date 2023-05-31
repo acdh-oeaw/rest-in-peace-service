@@ -1,10 +1,10 @@
 {
-    "title_full": "QGIS Server",
-    "title_short": "QGIS",
-    "url": "https://gis.acdh.oeaw.ac.at/",
-    "link_to_code_repo": "https://github.com/qgis/QGIS",
+    "title_full": "simple PHP/MySQL application for displaying John Gibson Walks", 
+    "title_short": "Gibson trail",
+    "url": "https://gibson-trail.uk/",
+    "link_to_code_repo": "",
     "deprecation_date": "2023-05-31",
-    "img": "qgis.png",
+    "img": "gibson.jpg",
     "custom_text": "",
     "custom_items": []
 }
