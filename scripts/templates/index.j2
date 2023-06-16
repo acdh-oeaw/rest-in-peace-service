@@ -1,24 +1,25 @@
 {% extends "/partials/base.j2" %}
 {% block title %} RIP Service {% endblock title %}
 {% block content %}
-
-    <div class="card">
-        <div class="card-header">
-            <h1>Rest in Peace Service</h1>
-            <h2>A tombstone service for deprecated ACDH-CH Services</h2>
-        </div>
-        <div class="card-body">
-        <ul>
-            {% for x in toc_data %}
-            <li>
-            <a href="{{ x.url }}">{{ x.title_short }}</a>
-            {% if x.img %}
-            <img src="img/{{ x.img }}" width="400px"></img>
-            {% endif %}
-            </li>
-            {% endfor %}
-        </ul>
-        </div>
-    </div>
-
+    <header class="page__header">
+      <h1>Rest in Peace Service</h1>
+      <h2>A tombstone service for deprecated ACDH-CH Services</h2>
+    </header>
+    
+    <main>
+      <ul class="grid" role="list">
+        {% for item in toc_data %}
+        <li>
+          <article class="grid__item">
+            <a href="{{ item.url }}">
+              {% if item.img %}
+              <img alt="" src="img/{{ item.img }}"></img>
+              {% endif %}
+              <h3>{{ item.title_short }}</h3>
+            </a>
+          </article>
+        </li>
+        {% endfor %}
+      </ul>
+    </main>
 {% endblock content %}
