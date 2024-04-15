@@ -1,0 +1,11 @@
+{
+    "title_full": "DELT - Database of English Learner Texts", 
+    "title_short": "DELT",
+    "url": "https://delt.acdh.oeaw.ac.at/",
+    "link_to_code_repo": "https://github.com/acdh-oeaw/delt.git",
+    "deprecation_date": "2024-04-15",
+    "img": "delt.png",
+    "custom_text": "",
+    "custom_items": []
+}
+
