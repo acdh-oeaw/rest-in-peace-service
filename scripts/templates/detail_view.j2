@@ -18,18 +18,17 @@
         <p>{{ custom_text|safe }}</p>
         {% else %}
         <p>The service called <em>{{ title_full }}</em> formerly accessible through this URL: <em>{{ url }}</em> is depreceated since <em>{{ deprecation_date }}</em>.</p>
-        <p>For futher information please write to <a href="mailto:acdh-helpdesk@oeaw.ac.at">ACDH-CH Helpdesk, acdh-helpdesk@oeaw.ac.at</a></p>
+        <p>For further information please write to <a href="mailto:acdh-helpdesk@oeaw.ac.at">ACDH-CH Helpdesk, acdh-helpdesk@oeaw.ac.at</a></p>
         {% endif %}
-
-        <dl>
-          {% if custom_items %}
+        {% if custom_items %}
+        <div>
           {% for item in custom_items %}
-          <div>
-            <dt>{{ item.item_key }}</dt>
-            <dd>{{ item.item_value|safe }}</dd>
-          </div>
+            <p>
+              {{ item }}
+            </p>
           {% endfor %}
-          {% endif %}
+        <div>
+         {% endif %}
           {% if link_to_code_repo %}
           <div>
             <dt>Source code</dt>
@@ -38,7 +37,7 @@
             </dd>
           </div>
           {% endif %}
-        </dl>
+        
       </div>
     </main>
 {% endblock content %}
