@@ -1,13 +1,13 @@
 <script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["setDomains", ["*.cbab.acdh.oeaw.ac.at/", "*.cbab.eos.arz.oeaw.ac.at"]]);
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['disableCookies']);
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
-  (function () {
+  (function() {
     var u = "//matomo.acdh.oeaw.ac.at/";
-    _paq.push(['setTrackerUrl', u + 'piwik.php']);
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', '{{ matomo_id }}']);
-    var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-    g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u + 'piwik.js'; s.parentNode.insertBefore(g, s);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
