@@ -1,5 +1,5 @@
 {
-    "title_full": "DELT - Database of English Learner Texts", 
+    "title_full": "DELT - Database of English Learner Texts",
     "title_short": "DELT",
     "url": "https://delt.acdh.oeaw.ac.at/",
     "link_to_code_repo": "https://github.com/acdh-oeaw/delt.git",
@@ -8,4 +8,3 @@
     "custom_text": "",
     "custom_items": []
 }
-

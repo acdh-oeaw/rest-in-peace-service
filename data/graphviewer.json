@@ -1,5 +1,5 @@
 {
-    "title_full": "GraphViewer", 
+    "title_full": "GraphViewer",
     "title_short": "GraphViewer",
     "url": "https://graphviewer.acdh.oeaw.ac.at/",
     "link_to_code_repo": "https://github.com/acdh-oeaw/graphviewer",
@@ -8,4 +8,3 @@
     "custom_text": "",
     "custom_items": []
 }
-
