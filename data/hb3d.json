@@ -1,0 +1,10 @@
+{
+    "title_full": "Wiener Hofburg 3D-Quellenspeicher",
+    "title_short": "HB3D",
+    "url": "https://hb3d.acdh-dev.oeaw.ac.at/",
+    "link_to_code_repo": "",
+    "deprecation_date": "2024-05-30",
+    "img": "hb3d.png",
+    "custom_text": "This App used to serve a 3D model created in the Project Wiener Hofburg 3D-Quellenspeicher. It is now deprecated."
+    "custom_items": []
+}
