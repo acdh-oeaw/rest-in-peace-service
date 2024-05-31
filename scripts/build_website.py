@@ -12,7 +12,7 @@ templateEnv = jinja2.Environment(loader=templateLoader)
 detail_view_template = templateEnv.get_template("detail_view.j2")
 index_template = templateEnv.get_template("index.j2")
 
-print("hallo, lets start building")
+print("hello, let's start building")
 
 for x in glob.glob("./html/*.html"):
     os.unlink(x)

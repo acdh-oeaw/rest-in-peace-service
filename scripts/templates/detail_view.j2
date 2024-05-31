@@ -12,13 +12,13 @@
     <main class="container">
       <div class="details">
         {% if img %}
-        <img alt="" src="img/{{ img }}"/>
+        <img alt="" src="img/{{ img }}">
         {% endif %}
-      
+
         {% if custom_text %}
         <p>{{ custom_text|safe }}</p>
         {% else %}
-        <p>The service called <em>{{ title_full }}</em> formerly accessible through this URL: <em>{{ url }}</em> is depreceated since <em>{{ deprecation_date }}</em>.</p>
+        <p>The service called <em>{{ title_full }}</em> formerly accessible through this URL: <em>{{ url }}</em> is deprecated since <em>{{ deprecation_date }}</em>.</p>
         <p>For further information please write to <a href="mailto:acdh-helpdesk@oeaw.ac.at">ACDH-CH Helpdesk, acdh-helpdesk@oeaw.ac.at</a></p>
         {% endif %}
         {% if custom_items %}
@@ -29,16 +29,16 @@
             </p>
           {% endfor %}
         <div>
-         {% endif %}
-          {% if link_to_code_repo %}
-          <div>
+        {% endif %}
+        {% if link_to_code_repo %}
+          <dl>
             <dt>Source code</dt>
             <dd>
               <a href="{{ link_to_code_repo }}">{{ link_to_code_repo }}</a>
             </dd>
-          </div>
-          {% endif %}
-        
+          </dl>
+        {% endif %}
+
       </div>
     </main>
 {% endblock content %}

@@ -5,7 +5,7 @@
       <h1>Rest in Peace Service</h1>
       <h2>A tombstone service for deprecated ACDH-CH Services</h2>
     </header>
-    
+
     <main>
       <ul class="grid" role="list">
         {% for item in toc_data %}
@@ -13,7 +13,7 @@
           <article class="grid__item">
             <a href="{{ item.url }}">
               {% if item.img %}
-              <img alt="" src="img/{{ item.img }}"></img>
+              <img alt="" src="img/{{ item.img }}">
               {% endif %}
               <h3>{{ item.title_short }}</h3>
             </a>
