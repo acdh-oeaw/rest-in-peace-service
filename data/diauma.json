@@ -1,0 +1,11 @@
+{
+    "title_full": "DIAUMA - Digitizing Austrian Maps", 
+    "title_short": "DIAUMA",
+    "url": "https://diauma.acdh.oeaw.ac.at/",
+    "link_to_code_repo": "https://github.com/acdh-oeaw/diauma.git",
+    "deprecation_date": "2024-06-30",
+    "img": "diauma.png",
+    "custom_text": "",
+    "custom_items": ""
+}
+
