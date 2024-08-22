@@ -1,0 +1,32 @@
+---
+import PageLayout from "../../layouts/page-layout.astro"
+import { getCollection } from "astro:content"
+
+export async function getStaticPaths() {
+    const data = await getCollection("tombstones")
+    return data.map((entry) => {
+        return { params: { id: entry.id},
+                props: {data: entry.data}  }
+    })
+}
+const { data } = Astro.props
+---
+<PageLayout>
+	<div>
+        <div class="grid mx-auto my-5 max-w-2xl content-start border-brandDark border-2 rounded-b-md rounded-t-sm auto-rows-min  bg-brandGray">
+            <!-- <img src="" alt=""> -->
+             <div>
+                <img src="/images/exploreat.png" alt=""></div>       
+            <div class="grid gap-1 p-5 bg-brandGrayDark text-brandLight">
+                <h1 class="text-2xl font-bold">{data.title_short}</h1>
+                <h2 class="text-xl font-medium text-brandGray">{data.title_full}</h2>
+            </div> 
+            <div class="grid content-start gap-2 p-5 ">
+                <p>The service called <em class="font-semibold">{data.title_full}</em> formerly accessible through this URL: <em class="font-semibold">{data.url}</em> is deprecated since {data.deprecation_date}.</p>
+                <p>For further information please write to <a href="mailto: acdh-helpdesk@oeaw.ac.at" class="underline underline-offset-2 decoration-brandGrayDark decoration-dotted">ACDH-CH Helpdesk</a>.</p>
+                <a href={data.link_to_code_repo} class="border border-brandDark py-3 px-5 rounded-md place-self-start hover:bg-brandDark hover:text-brandLight transition">Source code</a>
+            </div>
+        </div>
+    </div>
+	
+</PageLayout>
