@@ -1,4 +1,6 @@
 ---
+import "@/styles/index.css";
+import "@fontsource-variable/inter";
 import PageFooter from "../components/page-footer.astro"
 import PageHeader from "../components/page-header.astro"
 ---
@@ -11,7 +13,7 @@ import PageHeader from "../components/page-header.astro"
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body class="min-h-full grid grid-rows-[auto_1fr_auto]">
+	<body class="grid grid-rows-[auto_1fr_auto] bg-brandLight">
 		<PageHeader/>
 		<slot/>
 		<PageFooter/>
