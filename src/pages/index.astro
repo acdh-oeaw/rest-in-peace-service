@@ -2,7 +2,6 @@
 import PageLayout from "../layouts/page-layout.astro"
 import { getCollection } from "astro:content"
 const data = await getCollection("tombstones")
-
 ---
 <PageLayout>
 	<div class="px-5 py-3 sm:px-16 sm:py-10">
@@ -13,7 +12,7 @@ const data = await getCollection("tombstones")
 				return <li>
 						<a href={"/tombstones/" + entry.id}>
 							<article class="border-brandGray border-2 rounded-md shadow-sm bg-brandLight">
-								<img src="/images/exploreat.png" alt="" class="aspect-video">
+								<img src={`/images/${entry.data?.img}`} alt="Image of the deprecated website" class="h-40 w-full object-cover">
 								<h2 class="hover:bg-brandGray underline underline-offset-4 decoration-brandGrayDark p-2">
 									{entry.data.title_short}
 								</h2>
