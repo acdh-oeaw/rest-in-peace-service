@@ -1,13 +1,12 @@
 {
-    "title_full": "The Great Transformation. State and Communal Civil Service in Vienna, 1918–1920", 
-    "title_short": "Great Transformation App",
-    "url": "https://gtrans.acdh.oeaw.ac.at/",
-    "link_to_code_repo": "https://github.com/acdh-oeaw/gtrans",
-    "deprecation_date": "2024-05-06",
-    "img": "gtrans.png",
-    "custom_text": "",
-    "custom_items": [
-        "<a href='https://hdl.handle.net/21.11115/0000-000E-558C-5'>Link zu den Daten</a>"
-    ]
+  "title_full": "The Great Transformation. State and Communal Civil Service in Vienna, 1918–1920",
+  "title_short": "Great Transformation App",
+  "url": "https://gtrans.acdh.oeaw.ac.at/",
+  "link_to_code_repo": "https://github.com/acdh-oeaw/gtrans",
+  "deprecation_date": "2024-05-06",
+  "img": "/images/gtrans.png",
+  "custom_text": "",
+  "custom_items": [
+    "<a href='https://hdl.handle.net/21.11115/0000-000E-558C-5'>Link zu den Daten</a>"
+  ]
 }
-

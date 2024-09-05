@@ -1,10 +1,10 @@
 {
-    "title_full": "GraphViewer",
-    "title_short": "GraphViewer",
-    "url": "https://graphviewer.acdh.oeaw.ac.at/",
-    "link_to_code_repo": "https://github.com/acdh-oeaw/graphviewer",
-    "deprecation_date": "2024-05-30",
-    "img": "graphviewer.png",
-    "custom_text": "",
-    "custom_items": []
+  "title_full": "GraphViewer",
+  "title_short": "GraphViewer",
+  "url": "https://graphviewer.acdh.oeaw.ac.at/",
+  "link_to_code_repo": "https://github.com/acdh-oeaw/graphviewer",
+  "deprecation_date": "2024-05-30",
+  "img": "/images/graphviewer.png",
+  "custom_text": "",
+  "custom_items": []
 }

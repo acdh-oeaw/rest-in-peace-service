@@ -1,11 +1,10 @@
 {
-    "title_full": "Exploreat", 
-    "title_short": "exploreat",
-    "url": "https://exploreat.acdh.oeaw.ac.at/index.html",
-    "link_to_code_repo": "https://github.com/acdh-oeaw/",
-    "deprecation_date": "2024-05-30",
-    "img": "exploreat.png",
-    "custom_text": "",
-    "custom_items": []
+  "title_full": "Exploreat",
+  "title_short": "exploreat",
+  "url": "https://exploreat.acdh.oeaw.ac.at/index.html",
+  "link_to_code_repo": "https://github.com/acdh-oeaw/",
+  "deprecation_date": "2024-05-30",
+  "img": "/images/exploreat.png",
+  "custom_text": "",
+  "custom_items": []
 }
-
