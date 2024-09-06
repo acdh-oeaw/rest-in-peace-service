@@ -10,9 +10,9 @@ const data = await getCollection("tombstones")
 		<ul class="m-auto grid grid-cols-[repeat(auto-fill,minmax(270px,1fr))] gap-8 ">
 			{data.map((entry) => {
 				return <li>
-						<a href={"/tombstones/" + entry.id}>
+						<a href={"/rest-in-peace-service/tombstones/" + entry.id}>
 							<article class="border-brandGray border-2 rounded-md shadow-sm bg-brandLight">
-								<img src={entry.data?.img} alt="Image of the deprecated website" class="h-40 w-full object-cover">
+								<img src=`/rest-in-peace-service/${entry.data?.img}` alt="Image of the deprecated website" class="h-40 w-full object-cover">
 								<h2 class="hover:bg-brandGray underline underline-offset-4 decoration-brandGrayDark p-2">
 									{entry.data.title_short}
 								</h2>

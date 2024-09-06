@@ -17,7 +17,7 @@ const { data } = Astro.props
         <div class="grid mx-auto my-5 max-w-2xl content-start border-brandDark border-2 rounded-b-md rounded-t-sm auto-rows-min  bg-brandGray">
             <!-- <img src="" alt=""> -->
              <div class="relative w-full h-full">
-                <img src={data.img} alt="Image showing the website of the project" class="object-cover w-full h-full"></div>       
+                <img src=`/rest-in-peace-service/${data.img}` alt="Image showing the website of the project" class="object-cover w-full h-full"></div>       
             <div class="grid gap-1 p-5 bg-brandGrayDark text-brandLight">
                 <h1 class="text-lg md:text-2xl font-bold">{data.title_short}</h1>
                 <h2 class="text-base md:text-xl font-medium text-brandGray">{data.title_full}</h2>
