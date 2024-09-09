@@ -17,15 +17,29 @@ const { data } = Astro.props
         <div class="grid mx-auto my-5 max-w-2xl content-start border-brandDark border-2 rounded-b-md rounded-t-sm auto-rows-min  bg-brandGray">
             <!-- <img src="" alt=""> -->
              <div class="relative w-full h-full">
-                <img src=`/rest-in-peace-service/${data.img}` alt="Image showing the website of the project" class="object-cover w-full h-full"></div>       
+                <img src={`/rest-in-peace-service/${data.img}`} alt="Image showing the website of the project" class="object-cover w-full h-full"></div>       
             <div class="grid gap-1 p-5 bg-brandGrayDark text-brandLight">
                 <h1 class="text-lg md:text-2xl font-bold">{data.title_short}</h1>
                 <h2 class="text-base md:text-xl font-medium text-brandGray">{data.title_full}</h2>
             </div> 
             <div class="grid content-start gap-2 p-5 text-sm md:text-base">
-                <p>The service called <em class="font-semibold">{data.title_full}</em> formerly accessible through this URL: <em class="font-semibold">{data.url}</em> is deprecated since {data.deprecation_date}.</p>                
+                <p>The service called <em class="font-semibold">{data.title_full}</em> formerly accessible through this URL: <em class="font-semibold">{data.url}</em> is deprecated since {data.deprecation_date}.</p>      
+                <!-- display custom_text if not empty; use optional chaining to check if there is custom_text, extra safe, check if it is an empty string with .trim() -->
+                {data.custom_text?.trim() && <p>{data.custom_text}</p>}                
                 <p>For further information please write to <a href="mailto: acdh-helpdesk@oeaw.ac.at" class="underline underline-offset-2 decoration-brandGrayDark decoration-dotted hover:font-semibold">ACDH-CH Helpdesk</a>.</p>
+                <!-- check if the array custom_items is empty => its lenght larger than 0 and if so render all items in the array as list element in an <ul> - using map and set:html -->
+                {data.custom_items?.length > 0 && 
+                    <ul>
+                      {data.custom_items.map(item => (
+                          <li set:html={item}></li>
+                      ))}
+                  </ul>
+              }
+
+              <!-- display link to source code only if not empty field: check using optional chaining -->
+               {data.link_to_code_repo?.trim() && 
                 <a href={data.link_to_code_repo} class="border border-brandDark py-3 px-5 rounded-md place-self-start hover:bg-brandDark hover:text-brandLight transition">Source code</a>
+                }
             </div>
         </div>
     </div>
