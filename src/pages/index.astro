@@ -16,13 +16,13 @@ const data = await getCollection("tombstones");
 					return (
 						<li>
 							<a href={`/rest-in-peace-service/tombstones/${entry.id}`}>
-								<article class="rounded-md border-2 border-brandGray bg-brandLight shadow-sm">
+								<article class="rounded-md border-2 border-brand-gray bg-brand-light shadow-sm">
 									<img
 										alt=""
 										class="h-40 w-full object-cover"
 										src={`/rest-in-peace-service/${entry.data?.img}`}
 									/>
-									<h2 class="p-2 underline decoration-brandGrayDark underline-offset-4 hover:bg-brandGray">
+									<h2 class="p-2 underline decoration-brand-gray-dark underline-offset-4 hover:bg-brand-gray">
 										{entry.data.title_short}
 									</h2>
 								</article>

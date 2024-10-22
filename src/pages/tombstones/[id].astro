@@ -16,14 +16,14 @@ const { data } = Astro.props;
 <PageLayout>
 	<div>
 		<div
-			class="mx-auto my-5 grid max-w-2xl auto-rows-min content-start rounded-b-md rounded-t-sm border-2 border-brandDark bg-brandGray"
+			class="mx-auto my-5 grid max-w-2xl auto-rows-min content-start rounded-b-md rounded-t-sm border-2 border-brand-dark bg-brand-gray"
 		>
 			<div class="relative size-full">
 				<img alt="" class="size-full object-cover" src={`/rest-in-peace-service/${data.img}`} />
 			</div>
-			<div class="grid gap-1 bg-brandGrayDark p-5 text-brandLight">
+			<div class="grid gap-1 bg-brand-gray-dark p-5 text-brand-light">
 				<h1 class="text-lg font-bold md:text-2xl">{data.title_short}</h1>
-				<h2 class="text-base font-medium text-brandGray md:text-xl">{data.title_full}</h2>
+				<h2 class="text-base font-medium text-brand-gray md:text-xl">{data.title_full}</h2>
 			</div>
 			<div class="grid content-start gap-2 p-5 text-sm md:text-base">
 				<p>
@@ -37,7 +37,7 @@ const { data } = Astro.props;
 				<p>
 					For further information please write to <a
 						href="mailto: acdh-helpdesk@oeaw.ac.at"
-						class="underline decoration-brandGrayDark decoration-dotted underline-offset-2 hover:font-semibold"
+						class="underline decoration-brand-gray-dark decoration-dotted underline-offset-2 hover:font-semibold"
 						>ACDH-CH Helpdesk</a
 					>.
 				</p>
@@ -57,7 +57,7 @@ const { data } = Astro.props;
 					data.link_to_code_repo?.trim() && (
 						<a
 							href={data.link_to_code_repo}
-							class="place-self-start rounded-md border border-brandDark px-5 py-3 transition hover:bg-brandDark hover:text-brandLight"
+							class="place-self-start rounded-md border border-brand-dark px-5 py-3 transition hover:bg-brand-dark hover:text-brand-light"
 						>
 							Source code
 						</a>
