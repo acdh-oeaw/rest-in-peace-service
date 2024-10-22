@@ -1,10 +1,10 @@
 {
-  "title_full": "Die Gefallenen des Tiroler Aufstandes von 1809",
-  "title_short": "Tote Tiroler",
-  "url": "https://totetiroler.acdh.oeaw.ac.at/",
-  "link_to_code_repo": "https://github.com/acdh-oeaw/totetiroler",
-  "deprecation_date": "2024-05-06",
-  "img": "/images/totetiroler.png",
-  "custom_text": "",
-  "custom_items": []
+	"title_full": "Die Gefallenen des Tiroler Aufstandes von 1809",
+	"title_short": "Tote Tiroler",
+	"url": "https://totetiroler.acdh.oeaw.ac.at/",
+	"link_to_code_repo": "https://github.com/acdh-oeaw/totetiroler",
+	"deprecation_date": "2024-05-06",
+	"img": "/images/totetiroler.png",
+	"custom_text": "",
+	"custom_items": []
 }

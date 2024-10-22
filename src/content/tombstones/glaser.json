@@ -1,10 +1,10 @@
 {
-  "title_full": "Glaser - angular frontend visualizing data from the ADLIB API for BAS:IS",
-  "title_short": "The Glaser Collection",
-  "url": "https://glaser.acdh.oeaw.ac.at/",
-  "link_to_code_repo": "",
-  "deprecation_date": "2024-06-27",
-  "img": "/images/glaser-acdh.png",
-  "custom_text": "",
-  "custom_items": []
+	"title_full": "Glaser - angular frontend visualizing data from the ADLIB API for BAS:IS",
+	"title_short": "The Glaser Collection",
+	"url": "https://glaser.acdh.oeaw.ac.at/",
+	"link_to_code_repo": "",
+	"deprecation_date": "2024-06-27",
+	"img": "/images/glaser-acdh.png",
+	"custom_text": "",
+	"custom_items": []
 }
