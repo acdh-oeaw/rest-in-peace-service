@@ -45,7 +45,7 @@ export const createTombstones = createCollection("/tombstones/", (paths) => {
 			}),
 			image: fields.image({
 				label: "Image",
-				validation: { isRequired: false },
+				validation: { isRequired: true },
 				...createAssetOptions(paths.assetPath),
 			}),
 			matomoId: fields.number({
