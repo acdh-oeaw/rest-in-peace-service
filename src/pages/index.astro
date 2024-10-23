@@ -1,10 +1,12 @@
 ---
+import { Image } from "astro:assets";
 import { compareDesc } from "date-fns";
 
 import MainContent from "@/components/main-content.astro";
 import { defaultLocale } from "@/config/i18n.config";
 import PageLayout from "@/layouts/page-layout.astro";
 import { getFormatter } from "@/lib/formatter";
+import { getImageImport } from "@/lib/get-image-import";
 import { createI18n } from "@/lib/i18n";
 import { createCollectionResource, createSingletonResource } from "@/lib/keystatic/resources";
 import { pageSection } from "@/styles/components";
@@ -44,10 +46,12 @@ const { hero } = page.data;
 								<li>
 									<article class="relative grid grid-rows-[320px_auto] overflow-hidden rounded border bg-white shadow-md">
 										<div class="relative border-b">
-											<img
+											<Image
 												alt=""
 												class="absolute inset-0 size-full object-cover"
-												src={tombstone.data.image}
+												sizes="320px"
+												src={getImageImport(tombstone.data.image)}
+												widths={[320]}
 											/>
 										</div>
 										<div class="grid gap-y-0.5 p-6">

@@ -1,8 +1,11 @@
 ---
+import { Image } from "astro:assets";
+
 import MainContent from "@/components/main-content.astro";
 import { defaultLocale } from "@/config/i18n.config";
 import PageLayout from "@/layouts/page-layout.astro";
 import { getFormatter } from "@/lib/formatter";
+import { getImageImport } from "@/lib/get-image-import";
 import { createI18n } from "@/lib/i18n";
 import { createCollectionResource } from "@/lib/keystatic/resources";
 import { pageSection, pageTitle } from "@/styles/components";
@@ -34,7 +37,16 @@ const { default: Content } = await tombstone.compile(content);
 				class="relative mx-auto grid w-full max-w-screen-sm grid-rows-[480px_auto] overflow-hidden rounded-md border bg-white shadow-md"
 			>
 				<div class="relative border-b">
-					<img alt="" class="absolute inset-0 size-full object-cover" src={image} />
+					<Image
+						alt=""
+						class="absolute inset-0 size-full object-cover"
+						decoding="auto"
+						fetchpriority="high"
+						loading="eager"
+						sizes="640px"
+						src={getImageImport(image)}
+						widths={[640]}
+					/>
 				</div>
 				<div class="grid gap-y-6 p-8">
 					<h1 class={pageTitle}>{title}</h1>
