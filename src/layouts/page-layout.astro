@@ -1,23 +1,26 @@
 ---
-import "@fontsource-variable/inter/standard.css";
-import "@fontsource-variable/inter/standard-italic.css";
-import "@/styles/index.css";
+import TailwindIndicator from "@/components/tailwind-indicator.astro";
+import WebsiteFooter from "@/components/website-footer.astro";
+import WebsiteHeader from "@/components/website-header.astro";
+import type { Locale } from "@/config/i18n.config";
+import DocumentLayout from "@/layouts/document-layout.astro";
 
-import PageFooter from "../components/page-footer.astro";
-import PageHeader from "../components/page-header.astro";
+interface Props {
+	description?: string;
+	locale?: Locale;
+	robots?: string;
+	title: string;
+}
+
+const { description, locale, robots, title } = Astro.props;
 ---
 
-<html lang="en" class="h-full">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>RIP Service</title>
-	</head>
-	<body class="grid grid-rows-[auto_1fr_auto] bg-brand-light">
-		<PageHeader />
+<DocumentLayout description={description} locale={locale} robots={robots} title={title}>
+	<div class="grid min-h-full grid-rows-[auto_1fr_auto]">
+		<WebsiteHeader />
 		<slot />
-		<PageFooter />
-	</body>
-</html>
+		<WebsiteFooter />
+	</div>
+
+	<TailwindIndicator />
+</DocumentLayout>

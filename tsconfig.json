@@ -9,12 +9,12 @@
 			"@/*": ["./src/*"],
 			"~/*": ["./*"]
 		},
-		"plugins": [
-			{
-				"name": "@astrojs/ts-plugin"
-			}
-		]
+		"plugins": [{ "name": "@astrojs/ts-plugin" }]
 	},
 	"include": ["./**/*"],
-	"exclude": ["dist", "node_modules"]
+	"exclude": ["dist", "node_modules"],
+	"mdx": {
+		"checkMdx": false,
+		"plugins": ["remark-frontmatter", "remark-gfm"]
+	}
 }

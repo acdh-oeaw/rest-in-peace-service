@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets";
+
+import Link from "@/components/link.astro";
+import { defaultLocale } from "@/config/i18n.config";
+import { createI18n } from "@/lib/i18n";
+import logoLight from "~/public/assets/images/acdh-ch-logo-light.svg";
+
+const locale = defaultLocale;
+const { t } = await createI18n(locale);
+---
+
+<header class="border-b border-neutral-200">
+	<div class="container flex items-center justify-between gap-x-8 py-4">
+		<Link class="shrink-0" href="/">
+			<Image alt="" class="block h-6 w-auto" decoding="auto" fetchpriority="high" src={logoLight} />
+			<span class="sr-only">{t("WebsiteHeader.links.home")}</span>
+		</Link>
+	</div>
+</header>

@@ -1,69 +1,92 @@
 ---
-import { getCollection } from "astro:content";
-
-import PageLayout from "../../layouts/page-layout.astro";
+import MainContent from "@/components/main-content.astro";
+import { defaultLocale } from "@/config/i18n.config";
+import PageLayout from "@/layouts/page-layout.astro";
+import { getFormatter } from "@/lib/formatter";
+import { createI18n } from "@/lib/i18n";
+import { createCollectionResource } from "@/lib/keystatic/resources";
+import { pageSection, pageTitle } from "@/styles/components";
 
 export async function getStaticPaths() {
-	const data = await getCollection("tombstones");
-	return data.map((entry) => {
-		return { params: { id: entry.id }, props: { data: entry.data } };
+	const locale = defaultLocale;
+
+	const tombstones = await createCollectionResource("tombstones", locale).all();
+
+	return tombstones.map((tombstone) => {
+		return { params: { id: tombstone.id }, props: { locale, tombstone } };
 	});
 }
 
-const { data } = Astro.props;
+const { locale, tombstone } = Astro.props;
+
+const { t } = await createI18n(locale);
+const formatter = getFormatter(locale);
+
+const documentTitle = tombstone.data.title;
+const { content, deprecationDate, image, repo, title, url } = tombstone.data;
+const { default: Content } = await tombstone.compile(content);
 ---
 
-<PageLayout>
-	<div>
-		<div
-			class="mx-auto my-5 grid max-w-2xl auto-rows-min content-start rounded-b-md rounded-t-sm border-2 border-brand-dark bg-brand-gray"
-		>
-			<div class="relative size-full">
-				<img alt="" class="size-full object-cover" src={`/rest-in-peace-service/${data.img}`} />
-			</div>
-			<div class="grid gap-1 bg-brand-gray-dark p-5 text-brand-light">
-				<h1 class="text-lg font-bold md:text-2xl">{data.title_short}</h1>
-				<h2 class="text-base font-medium text-brand-gray md:text-xl">{data.title_full}</h2>
-			</div>
-			<div class="grid content-start gap-2 p-5 text-sm md:text-base">
-				<p>
-					The service called <em class="font-semibold">{data.title_full}</em> formerly accessible through
-					this URL: <em class="font-semibold">{data.url}</em> is deprecated since {
-						data.deprecation_date
-					}.
-				</p>
-				<!-- display custom_text if not empty; use optional chaining to check if there is custom_text, extra safe, check if it is an empty string with .trim() -->
-				{data.custom_text?.trim() && <p>{data.custom_text}</p>}
-				<p>
-					For further information please write to <a
-						href="mailto: acdh-helpdesk@oeaw.ac.at"
-						class="underline decoration-brand-gray-dark decoration-dotted underline-offset-2 hover:font-semibold"
-						>ACDH-CH Helpdesk</a
-					>.
-				</p>
-				<!-- check if the array custom_items is empty => its lenght larger than 0 and if so render all items in the array as list element in an <ul> - using map and set:html -->
-				{
-					data.custom_items?.length > 0 && (
-						<ul>
-							{data.custom_items.map((item: string) => {
-								return <li set:html={item} />;
-							})}
-						</ul>
-					)
-				}
+<PageLayout locale={locale} title={documentTitle}>
+	<MainContent>
+		<section class={pageSection}>
+			<article
+				class="relative mx-auto grid w-full max-w-screen-sm grid-rows-[480px_auto] overflow-hidden rounded-md border bg-white shadow-md"
+			>
+				<div class="relative border-b">
+					<img alt="" class="absolute inset-0 size-full object-cover" src={image} />
+				</div>
+				<div class="grid gap-y-6 p-8">
+					<h1 class={pageTitle}>{title}</h1>
 
-				<!-- display link to source code only if not empty field: check using optional chaining -->
-				{
-					data.link_to_code_repo?.trim() && (
-						<a
-							href={data.link_to_code_repo}
-							class="place-self-start rounded-md border border-brand-dark px-5 py-3 transition hover:bg-brand-dark hover:text-brand-light"
-						>
-							Source code
-						</a>
-					)
-				}
-			</div>
-		</div>
-	</div>
+					<dl class="grid gap-y-4">
+						<div>
+							<dt class="text-xs font-semibold uppercase tracking-wider text-neutral-600">
+								{t("collections.tombstones.deprecation-date")}
+							</dt>
+							<dd>
+								<time datetime={deprecationDate}>
+									{formatter.date.format(new Date(deprecationDate))}
+								</time>
+							</dd>
+						</div>
+						<div>
+							<dt class="text-xs font-semibold uppercase tracking-wider text-neutral-600">
+								{t("collections.tombstones.url")}
+							</dt>
+							<dd>{url}</dd>
+						</div>
+						{
+							repo ? (
+								<div>
+									<dt class="text-xs font-semibold uppercase tracking-wider text-neutral-600">
+										{t("collections.tombstones.repo")}
+									</dt>
+									<dd>
+										<a href={repo}>{repo}</a>
+									</dd>
+								</div>
+							) : null
+						}
+					</dl>
+					{
+						content.length ? (
+							<div class="prose">
+								<Content />
+							</div>
+						) : null
+					}
+					<hr />
+					<div class="text-sm text-neutral-700">
+						The service <em>{title}</em>, previously accessible at {url} has been deprecated since {
+							formatter.date.format(new Date(deprecationDate))
+						}. For further information please contact the <a
+							class="underline hover:no-underline"
+							href="mailto: acdh-helpdesk@oeaw.ac.at">ACDH-CH Helpdesk</a
+						>.
+					</div>
+				</div>
+			</article>
+		</section>
+	</MainContent>
 </PageLayout>

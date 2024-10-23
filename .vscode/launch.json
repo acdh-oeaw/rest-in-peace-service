@@ -1,11 +1,24 @@
 {
-	"version": "0.2.0",
 	"configurations": [
 		{
-			"command": "./node_modules/.bin/astro dev",
-			"name": "Development server",
+			"name": "Apps: Web (server-side)",
 			"request": "launch",
-			"type": "node-terminal"
+			"runtimeArgs": ["run", "dev"],
+			"runtimeExecutable": "pnpm",
+			"skipFiles": ["<node_internals>/**"],
+			"type": "node"
+		},
+		{
+			"name": "Apps: Web (client-side)",
+			"type": "chrome",
+			"request": "launch",
+			"url": "http://localhost:3000"
+		}
+	],
+	"compounds": [
+		{
+			"name": "Apps: Web",
+			"configurations": ["Apps: Web (server-side)", "Apps: Web (client-side)"]
 		}
 	]
 }

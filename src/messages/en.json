@@ -1,0 +1,42 @@
+{
+	"collections": {
+		"tombstones": {
+			"deprecation-date": "Deprecation date",
+			"url": "Service URL",
+			"repo": "Source code"
+		}
+	},
+	"mdx": {
+		"footnote-back-label": "Back to reference {reference}",
+		"footnotes": "Footnotes"
+	},
+	"ImprintPage": {
+		"meta": {
+			"title": "Imprint"
+		},
+		"title": "Imprint"
+	},
+	"IndexPage": {
+		"deprecated-on": "Deprecated on",
+		"meta": {
+			"title": "Home"
+		}
+	},
+	"NotFoundPage": {
+		"meta": {
+			"title": "Page not found"
+		},
+		"title": "Page not found"
+	},
+	"WebsiteFooter": {
+		"links": {
+			"feed": "RSS Feed",
+			"imprint": "Imprint"
+		}
+	},
+	"WebsiteHeader": {
+		"links": {
+			"home": "Home"
+		}
+	}
+}

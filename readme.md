@@ -1,8 +1,9 @@
 # rest-in-peace-service
 
-tombstone service for deprecated services
+tombstone service for deprecated services. deployed at <https://rip.acdh.oeaw.ac.at>.
 
-## howto
+## how to edit content
 
-- add a .json file for your deprecated service in `./src/content/tombstones/`
-- add an image to `./public/images/` (please use a reasonable file size!)
+use the admin ui at <https://rip.acdh.oeaw.ac.at/admin> (this will commit changes to the github
+repository), or at <http://localhost:3000/admin> when developing locally (this will save changes to
+the filesystem).
