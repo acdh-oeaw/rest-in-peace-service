@@ -31,7 +31,8 @@
 	"WebsiteFooter": {
 		"links": {
 			"feed": "RSS Feed",
-			"imprint": "Imprint"
+			"imprint": "Imprint",
+			"repo": "GitHub repository"
 		}
 	},
 	"WebsiteHeader": {
