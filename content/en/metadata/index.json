@@ -1,6 +1,6 @@
 {
 	"title": "Rest in peace",
-	"description": "This website lists deprecated services developed at the Austrian Centre for Digital Humanities.",
+	"description": "This website lists deprecated services developed at the Austrian Centre for Digital Humanities and Cultural Heritage.",
 	"twitter": {
 		"creator": "@acdh_oeaw",
 		"site": "@acdh_oeaw"
@@ -8,6 +8,6 @@
 	"manifest": {
 		"name": "Rest in peace",
 		"short-name": "Rest in peace",
-		"description": "This website lists deprecated services developed at the Austrian Centre for Digital Humanities."
+		"description": "This website lists deprecated services developed at the Austrian Centre for Digital Humanities and Cultural Heritage."
 	}
 }
