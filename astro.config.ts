@@ -35,7 +35,6 @@ export default defineConfig({
 			exclude: ["**/content/**", "**/keystatic/**"],
 		}),
 	],
-	output: "hybrid",
 	prefetch: {
 		defaultStrategy: "hover",
 		prefetchAll: true,
