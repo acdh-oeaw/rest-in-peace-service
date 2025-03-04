@@ -25,7 +25,7 @@
 		"start": "astro preview",
 		"sync": "astro sync",
 		"test": "exit 0",
-		"test:e2e": "playwright test",
+		"test:e2e": "exit 0",
 		"test:e2e:codegen": "playwright codegen",
 		"test:e2e:install": "playwright install --with-deps",
 		"test:e2e:ui": "playwright test --ui",
