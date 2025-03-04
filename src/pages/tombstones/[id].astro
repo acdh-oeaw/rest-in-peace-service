@@ -1,0 +1,104 @@
+---
+import { Image } from "astro:assets";
+
+import MainContent from "@/components/main-content.astro";
+import { defaultLocale } from "@/config/i18n.config";
+import PageLayout from "@/layouts/page-layout.astro";
+import { getFormatter } from "@/lib/formatter";
+import { getImageImport } from "@/lib/get-image-import";
+import { createI18n } from "@/lib/i18n";
+import { createCollectionResource } from "@/lib/keystatic/resources";
+import { pageSection, pageTitle } from "@/styles/components";
+
+export async function getStaticPaths() {
+	const locale = defaultLocale;
+
+	const tombstones = await createCollectionResource("tombstones", locale).all();
+
+	return tombstones.map((tombstone) => {
+		return { params: { id: tombstone.id }, props: { locale, tombstone } };
+	});
+}
+
+const { locale, tombstone } = Astro.props;
+
+const { t } = await createI18n(locale);
+const formatter = getFormatter(locale);
+
+const documentTitle = tombstone.data.title;
+const { content, deprecationDate, image, repo, title, url } = tombstone.data;
+const { default: Content } = await tombstone.compile(content);
+---
+
+<PageLayout locale={locale} title={documentTitle}>
+	<MainContent class="bg-neutral-50">
+		<section class={pageSection}>
+			<article
+				class="relative mx-auto grid w-full max-w-screen-sm grid-rows-[480px_auto] overflow-hidden rounded-md border bg-white shadow-md"
+			>
+				<div class="relative border-b">
+					<Image
+						alt=""
+						class="absolute inset-0 size-full object-cover"
+						decoding="auto"
+						fetchpriority="high"
+						loading="eager"
+						sizes="640px"
+						src={getImageImport(image)}
+						widths={[640]}
+					/>
+				</div>
+				<div class="grid gap-y-6 p-8">
+					<h1 class={pageTitle}>{title}</h1>
+
+					<dl class="grid gap-y-4">
+						<div>
+							<dt class="text-xs font-semibold uppercase tracking-wider text-neutral-600">
+								{t("collections.tombstones.deprecation-date")}
+							</dt>
+							<dd>
+								<time datetime={deprecationDate}>
+									{formatter.date.format(new Date(deprecationDate))}
+								</time>
+							</dd>
+						</div>
+						<div>
+							<dt class="text-xs font-semibold uppercase tracking-wider text-neutral-600">
+								{t("collections.tombstones.url")}
+							</dt>
+							<dd>{url}</dd>
+						</div>
+						{
+							repo ? (
+								<div>
+									<dt class="text-xs font-semibold uppercase tracking-wider text-neutral-600">
+										{t("collections.tombstones.repo")}
+									</dt>
+									<dd>
+										<a href={repo}>{repo}</a>
+									</dd>
+								</div>
+							) : null
+						}
+					</dl>
+					{
+						content.length ? (
+							<div class="prose">
+								<Content />
+							</div>
+						) : null
+					}
+					<hr />
+					<div class="text-sm text-neutral-700">
+						The service <em>{title}</em>, previously accessible at {url} has been deprecated since {
+							formatter.date.format(new Date(deprecationDate))
+						}. For further information please contact the <a
+							class="underline hover:no-underline"
+							href="mailto: acdh-helpdesk@oeaw.ac.at">ACDH-CH Helpdesk</a
+						>.
+					</div>
+				</div>
+			</article>
+		</section>
+	</MainContent>
+</PageLayout>

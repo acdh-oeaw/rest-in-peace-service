@@ -1,0 +1,83 @@
+---
+import { Image } from "astro:assets";
+import { compareDesc } from "date-fns";
+
+import MainContent from "@/components/main-content.astro";
+import { defaultLocale } from "@/config/i18n.config";
+import PageLayout from "@/layouts/page-layout.astro";
+import { getFormatter } from "@/lib/formatter";
+import { getImageImport } from "@/lib/get-image-import";
+import { createI18n } from "@/lib/i18n";
+import { createCollectionResource, createSingletonResource } from "@/lib/keystatic/resources";
+import { pageSection } from "@/styles/components";
+
+const locale = defaultLocale;
+const { t } = await createI18n(locale);
+const formatter = getFormatter(locale);
+
+const page = await createSingletonResource("index-page", locale).read();
+const _tombstones = await createCollectionResource("tombstones", locale).all();
+const tombstones = _tombstones.sort((a, z) => {
+	return compareDesc(new Date(a.data.publicationDate), new Date(z.data.publicationDate));
+});
+
+const documentTitle = t("IndexPage.meta.title");
+const { hero } = page.data;
+---
+
+<PageLayout locale={locale} title={documentTitle}>
+	<MainContent class="flex flex-col">
+		<section class="container relative grid gap-y-2 py-8 sm:py-24">
+			<h1 class="text-3xl font-extrabold tracking-tight text-neutral-950 md:text-5xl lg:text-6xl">
+				{hero.title.toLowerCase()}.
+			</h1>
+			<p class="ml-6 text-sm font-medium text-neutral-700 sm:text-base md:text-lg">{hero.lead}</p>
+		</section>
+
+		<div class="grow border-t border-neutral-200 bg-neutral-50">
+			<section class={pageSection}>
+				<ul
+					class="grid grid-cols-[repeat(auto-fill,minmax(min(320px,100%),1fr))] gap-x-6 gap-y-8"
+					role="list"
+				>
+					{
+						tombstones.map((tombstone) => {
+							return (
+								<li>
+									<article class="relative grid grid-rows-[320px_auto] overflow-hidden rounded border bg-white shadow-md">
+										<div class="relative border-b">
+											<Image
+												alt=""
+												class="absolute inset-0 size-full object-cover"
+												sizes="440px"
+												src={getImageImport(tombstone.data.image)}
+												widths={[440]}
+											/>
+										</div>
+										<div class="grid gap-y-0.5 p-6">
+											<h2 class="text-lg font-semibold">
+												<a
+													class="after:absolute after:inset-0 after:size-full after:transition after:hover:bg-black/5"
+													href={`/tombstones/${tombstone.id}`}
+												>
+													{tombstone.data.shortTitle ?? tombstone.data.title}
+												</a>
+											</h2>
+											<div class="text-neutral-600">
+												{t("IndexPage.deprecated-on")}{" "}
+												<time datetime={tombstone.data.deprecationDate}>
+													{formatter.date.format(new Date(tombstone.data.deprecationDate))}
+												</time>
+												.
+											</div>
+										</div>
+									</article>
+								</li>
+							);
+						})
+					}
+				</ul>
+			</section>
+		</div>
+	</MainContent>
+</PageLayout>

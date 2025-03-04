@@ -1,0 +1,28 @@
+---
+import { request } from "@acdh-oeaw/lib";
+
+import MainContent from "@/components/main-content.astro";
+import { defaultLocale } from "@/config/i18n.config";
+import { createImprintUrl } from "@/config/imprint.config";
+import PageLayout from "@/layouts/page-layout.astro";
+import { createI18n } from "@/lib/i18n";
+import { pageSection, pageTitle } from "@/styles/components";
+
+const locale = defaultLocale;
+const { t } = await createI18n(locale);
+
+const documentTitle = t("ImprintPage.meta.title");
+const title = t("ImprintPage.title");
+
+const imprintUrl = createImprintUrl(locale);
+const imprintHtml = await request(imprintUrl, { responseType: "text" });
+---
+
+<PageLayout locale={locale} title={documentTitle}>
+	<MainContent search="exclude">
+		<section class={pageSection}>
+			<h1 class={pageTitle}>{title}</h1>
+			<div class="prose" set:html={imprintHtml} />
+		</section>
+	</MainContent>
+</PageLayout>
