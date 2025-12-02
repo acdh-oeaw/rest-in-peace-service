@@ -2,8 +2,8 @@ import baseConfig from "@acdh-oeaw/eslint-config";
 import astroConfig from "@acdh-oeaw/eslint-config-astro";
 import playwrightConfig from "@acdh-oeaw/eslint-config-playwright";
 import reactConfig from "@acdh-oeaw/eslint-config-react";
-import solidJsConfig from "@acdh-oeaw/eslint-config-solid";
 import tailwindcssConfig from "@acdh-oeaw/eslint-config-tailwindcss";
+import { defineConfig } from "eslint/config";
 import gitignore from "eslint-config-flat-gitignore";
 
 const reactFiles = [
@@ -12,25 +12,20 @@ const reactFiles = [
 	"**/keystatic/**/*.@(ts|tsx)",
 ];
 
-const config = [
+const config = defineConfig(
 	gitignore({ strict: false }),
-	...baseConfig,
-	...astroConfig,
-	...reactConfig.map((config) => {
-		return {
-			...config,
-			files: reactFiles,
-		};
-	}),
-	...solidJsConfig.map((config) => {
-		return {
-			...config,
-			files: ["**/components/**/*.@(ts|tsx)", "**/ui/**/*.@(ts|tsx)"],
-			ignores: reactFiles,
-		};
-	}),
-	...tailwindcssConfig,
-	...playwrightConfig,
+	baseConfig,
+	{
+		extends: [astroConfig],
+		ignores: reactFiles,
+	},
+	{
+		extends: [reactConfig],
+		files: reactFiles,
+	},
+	// @ts-expect-error It's fine.
+	tailwindcssConfig,
+	playwrightConfig,
 	{
 		rules: {
 			"arrow-body-style": ["error", "always"],
@@ -43,6 +38,6 @@ const config = [
 			"react/jsx-sort-props": ["error", { reservedFirst: true }],
 		},
 	},
-];
+);
 
 export default config;

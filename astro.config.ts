@@ -2,7 +2,6 @@ import mdx from "@astrojs/mdx";
 import node from "@astrojs/node";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
-import solidJs from "@astrojs/solid-js";
 import { defineConfig } from "astro/config";
 import icon from "astro-icon";
 import { loadEnv } from "vite";
@@ -31,9 +30,6 @@ export default defineConfig({
 			include: ["**/content/**", "**/keystatic/**"],
 		}),
 		sitemap(),
-		solidJs({
-			exclude: ["**/content/**", "**/keystatic/**"],
-		}),
 	],
 	prefetch: {
 		defaultStrategy: "hover",
