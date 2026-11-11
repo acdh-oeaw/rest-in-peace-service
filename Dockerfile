@@ -6,7 +6,8 @@
 # base
 FROM node:26-alpine AS base
 
-RUN corepack enable
+# Corepack is no longer bundled with Node.js 25+.
+RUN npm install --global corepack@latest && corepack enable
 
 RUN mkdir /app && chown -R node:node /app
 WORKDIR /app

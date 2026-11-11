@@ -1,0 +1,13 @@
+# syntax=docker/dockerfile:1
+
+ARG PLAYWRIGHT_VERSION=1.65.0
+FROM node:26-bookworm AS node
+FROM mcr.microsoft.com/playwright:v${PLAYWRIGHT_VERSION}-resolute
+
+# Use the project's Node version alongside Ubuntu 26.04 and Playwright's browsers.
+COPY --from=node /usr/local/ /usr/local/
+RUN npm install --global corepack@latest && corepack enable
+
+ENV CI=true
+ENV HOME=/tmp
+WORKDIR /tmp

@@ -29,6 +29,7 @@
 		"test:e2e:install": "playwright install --with-deps",
 		"test:e2e:ui": "playwright test --ui",
 		"test:e2e:update-snapshots": "playwright test --update-snapshots",
+		"test:e2e:update-snapshots:docker": "bash scripts/update-snapshots-docker.sh",
 		"types:check": "astro check",
 		"validate": "run-p format:check lint:check types:check test test:e2e"
 	},
