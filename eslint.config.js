@@ -2,7 +2,6 @@ import baseConfig from "@acdh-oeaw/eslint-config";
 import astroConfig from "@acdh-oeaw/eslint-config-astro";
 import playwrightConfig from "@acdh-oeaw/eslint-config-playwright";
 import reactConfig from "@acdh-oeaw/eslint-config-react";
-import tailwindcssConfig from "@acdh-oeaw/eslint-config-tailwindcss";
 import { defineConfig } from "eslint/config";
 import gitignore from "eslint-config-flat-gitignore";
 
@@ -23,8 +22,6 @@ const config = defineConfig(
 		extends: [reactConfig],
 		files: reactFiles,
 	},
-	// @ts-expect-error It's fine.
-	tailwindcssConfig,
 	playwrightConfig,
 	{
 		rules: {
