@@ -34,9 +34,9 @@ const { default: Content } = await tombstone.compile(content);
 	<MainContent class="bg-neutral-50">
 		<section class={pageSection}>
 			<article
-				class="relative mx-auto grid w-full max-w-screen-sm grid-rows-[480px_auto] overflow-hidden rounded-md border bg-white shadow-md"
+				class="relative mx-auto grid w-full max-w-(--breakpoint-sm) grid-rows-[480px_auto] overflow-hidden rounded-md border border-gray-200 bg-white shadow-md"
 			>
-				<div class="relative border-b">
+				<div class="relative border-b border-gray-200">
 					<Image
 						alt=""
 						class="absolute inset-0 size-full object-cover"
