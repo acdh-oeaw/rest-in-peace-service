@@ -60,7 +60,7 @@ const { hero } = page.data;
 													class="after:absolute after:inset-0 after:size-full after:transition after:hover:bg-black/5"
 													href={`/tombstones/${tombstone.id}`}
 												>
-													{tombstone.data.shortTitle ?? tombstone.data.title}
+													{tombstone.data.shortTitle?.trim() || tombstone.data.title}
 												</a>
 											</h2>
 											<div class="text-neutral-600">
