@@ -71,6 +71,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
+      - name: Read pnpm version from package.json
+        id: pnpm
+        run: |
+          PNPM_VERSION=$(jq --exit-status --raw-output '.packageManager | select(startswith("pnpm@")) | ltrimstr("pnpm@") | split("+")[0]' package.json)
+          echo "version=$PNPM_VERSION" >> "$GITHUB_OUTPUT"
+
       - name: Ensure astro build artefacts folder exists
         run: mkdir -p node_modules/.astro
 
@@ -108,6 +114,7 @@ jobs:
           tags: "${{ steps.meta.outputs.tags }}"
           labels: "${{ steps.meta.outputs.labels }}"
           build-args: |
+            "PNPM_VERSION=${{ steps.pnpm.outputs.version }}"
             "PUBLIC_APP_BASE_PATH=${{ vars.PUBLIC_APP_BASE_PATH }}"
             "PUBLIC_APP_BASE_URL=${{ needs.vars.outputs.public_url }}"
             "PUBLIC_BOTS=${{ vars.PUBLIC_BOTS }}"

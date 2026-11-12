@@ -6,7 +6,8 @@ FROM mcr.microsoft.com/playwright:v${PLAYWRIGHT_VERSION}-resolute
 
 # Use the project's Node version alongside Ubuntu 26.04 and Playwright's browsers.
 COPY --from=node /usr/local/ /usr/local/
-RUN npm install --global corepack@latest && corepack enable
+ARG PNPM_VERSION=12.18.0
+RUN npm install --global pnpm@${PNPM_VERSION}
 
 ENV CI=true
 ENV HOME=/tmp

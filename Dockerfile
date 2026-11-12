@@ -6,15 +6,15 @@
 # base
 FROM node:26-alpine AS base
 
-# Corepack is no longer bundled with Node.js 25+.
-RUN npm install --global corepack@latest && corepack enable
+ARG PNPM_VERSION=12.18.0
+RUN npm install --global pnpm@${PNPM_VERSION}
 
 RUN mkdir /app && chown -R node:node /app
 WORKDIR /app
 
 USER node
 
-COPY --chown=node:node .npmrc package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY --chown=node:node package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
 RUN pnpm fetch --prod
 RUN pnpm install --frozen-lockfile --ignore-scripts --offline --prod

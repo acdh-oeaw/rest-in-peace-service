@@ -2,10 +2,8 @@ allowBuilds:
   esbuild: true
   sharp: true
   simple-git-hooks: true
-engineStrict: true
 
-minimumReleaseAgeExclude:
-  - prettier@3.10.0
+engineStrict: true
 
 shellEmulator: true
 

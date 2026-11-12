@@ -5,9 +5,11 @@ cd "$(dirname "$0")/.."
 
 # Resolve the installed version so browser binaries match the locked test runner.
 playwright_version=$(node -p 'require("@playwright/test/package.json").version')
+pnpm_version=$(node -p 'require("./package.json").packageManager.slice("pnpm@".length).split("+")[0]')
 image="rest-in-peace-playwright:${playwright_version}-resolute"
 
 docker build --file Dockerfile.playwright \
+	--build-arg "PNPM_VERSION=$pnpm_version" \
 	--build-arg "PLAYWRIGHT_VERSION=$playwright_version" --tag "$image" .
 
 # Work in a disposable copy to avoid replacing host dependencies or build output.
