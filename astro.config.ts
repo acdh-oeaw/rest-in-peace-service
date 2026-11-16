@@ -45,6 +45,11 @@ export default defineConfig({
 		},
 	},
 	scopedStyleStrategy: "where",
+	security: {
+		allowedDomains: env.PUBLIC_APP_BASE_URL
+			? [{ hostname: new URL(env.PUBLIC_APP_BASE_URL).hostname }]
+			: [],
+	},
 	server: {
 		/** Required by keystatic. */
 		host: "127.0.0.1",
