@@ -28,7 +28,7 @@ export default defineConfig({
 		 * @see https://github.com/Thinkmill/keystatic/discussions/951
 		 */
 		react({
-			include: ["**/content/**", "**/keystatic/**"],
+			include: ["**/content/**/*.@(jsx|tsx)", "**/keystatic/**/*.@(jsx|tsx)"],
 		}),
 		sitemap(),
 	],
