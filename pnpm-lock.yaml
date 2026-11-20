@@ -184,9 +184,6 @@ importers:
       '@acdh-oeaw/mdx-lib':
         specifier: ^0.2.0
         version: 0.2.0(supports-color@7.2.0)
-      '@acdh-oeaw/style-variants':
-        specifier: ^0.1.0
-        version: 0.1.0
       '@acdh-oeaw/validate-env':
         specifier: ^0.0.3
         version: 0.0.3
@@ -226,12 +223,6 @@ importers:
       date-fns:
         specifier: ^4.4.0
         version: 4.4.0
-      lucide-react:
-        specifier: ^0.464.0
-        version: 0.464.0(react@19.3.1)
-      lucide-solid:
-        specifier: ^0.464.0
-        version: 0.464.0(solid-js@1.9.18)
       react:
         specifier: ^19.3.1
         version: 19.3.1
@@ -335,9 +326,6 @@ importers:
       eslint-config-flat-gitignore:
         specifier: ^0.3.0
         version: 0.3.0(eslint@9.39.5(jiti@2.7.0)(supports-color@7.2.0))
-      globals:
-        specifier: ^16.5.0
-        version: 16.5.0
       is-ci:
         specifier: ^3.0.1
         version: 3.0.1
@@ -431,10 +419,6 @@ packages:
     resolution: {integrity: sha512-0M77qAD8Uhks+S6lPaKzq6ylwQJzjS33jE6uWKNM9dt7iJ1KHgsuZ3xVhWNmw5h/cUGYJvBi0V/ZSy65ow+9Ag==}
     peerDependencies:
       prettier: 3.x
-
-  '@acdh-oeaw/style-variants@0.1.0':
-    resolution: {integrity: sha512-raVq99q1TyJSbQ2bQGDTaWCqbaKQG1Uj5sythsDj5qMZJURrpujGzJ8nC4RRRX1bLb5t3Xbm4MDL4JT51JqA5Q==}
-    engines: {node: '>=22', pnpm: 9.x}
 
   '@acdh-oeaw/stylelint-config@2.3.2':
     resolution: {integrity: sha512-1BetwUt3INSJZmIjaSYPIlpkSFJsJoD7HEUxS7nxB6zukG5Yho1/DJn/V+FryTOdl3EPAucGYR+bKEsiMeOVIQ==}
@@ -3811,16 +3795,6 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-react@0.464.0:
-    resolution: {integrity: sha512-eCx1qClbnw5qRqB2Z1AFFp71wdJXEwhPp5ii8LviyvHb7o/7eMXFiTyDHh7JpjM9BO9pC6ZUp/c7mCwwxbPIcg==}
-    peerDependencies:
-      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
-
-  lucide-solid@0.464.0:
-    resolution: {integrity: sha512-xSA0cgRtYe4xR4rRJ2/xy/JgcjQmu9dP7xgKhTNMNZQhOY2ImbW/8Yuqt6JwAocsWXna9dhcfyXZDI6M6wo8mQ==}
-    peerDependencies:
-      solid-js: ^1.4.7
-
   magic-string@1.4.5:
     resolution: {integrity: sha512-oLLC2+YvQUfAa+vxoufE/yc1icb87M9iXIRqAoR/2EhE/8cb3SF/+Gi0c2By1B+5Vz2e2vQtUvHiu1+63Znh+w==}
 
@@ -4647,16 +4621,6 @@ packages:
     resolution: {integrity: sha512-1gnZf7DFcoIcajTjTwjwuDjzuz4PPcY2StKPlsGAQ1+YH20IRVrBaXSWmdjowTJ6u8Rc01PoYOGHXfP1mYcZNQ==}
     engines: {node: '>= 18'}
 
-  seroval-plugins@1.6.12:
-    resolution: {integrity: sha512-+reiwp/lYxiyctSrdvX7OQ1YLrcbWYgBiZrhSFL+V43b0/DGRLNVSDyZINbQe+tWplPOI2fw2dPrdv6hcc09kQ==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      seroval: ^1.0
-
-  seroval@1.6.12:
-    resolution: {integrity: sha512-CqbIVfk/7GL3ITwZI55lcPbpQbjHZ2DD5cUj4iH7E9YsCfHNJV1mx7yNp86Z84w5IpmkZZS/2s5vPOWmVWSdQg==}
-    engines: {node: '>=10'}
-
   server-destroy@1.0.1:
     resolution: {integrity: sha512-rb+9B5YBIEzYcD6x2VKidaa+cqYBJQKnU4oe4E3ANwRRN56yk/ua1YCJT1n21NTS8w6CcOclAKNP3PhdCXKYtQ==}
 
@@ -4767,9 +4731,6 @@ packages:
   smol-toml@1.9.1:
     resolution: {integrity: sha512-j7WyPdf0CJoutMzMoPLF/bVXHtKZIT9Rb4eGeEbWw8X2t5oirjPgpL+OpaENZrILYaXqYwnVH+qgUwVbl+pUJQ==}
     engines: {node: '>= 18'}
-
-  solid-js@1.9.18:
-    resolution: {integrity: sha512-CHGO5YFk6Y9m/1YSxVtKnXfrW7JD3Tmof8HmR4z6TmCPsS8efo8LnzIR8CQh3cUvffqYm6DWyBFfk8dQw1CNQQ==}
 
   source-map-js@1.2.2:
     resolution: {integrity: sha512-KGj/8Y43x35aZVDtt+J4mK1hoLGHULMYfSkODJNQjNDC3oW1PqPoxMwo0pLUsWM/UEGzON/NxeHywEfNXNP3Vw==}
@@ -5601,10 +5562,6 @@ snapshots:
   '@acdh-oeaw/prettier-config@2.0.1(prettier@3.10.1)':
     dependencies:
       prettier: 3.10.1
-
-  '@acdh-oeaw/style-variants@0.1.0':
-    dependencies:
-      clsx: 2.1.1
 
   '@acdh-oeaw/stylelint-config@2.3.2(postcss-html@1.8.1)(stylelint-order@7.0.1(stylelint@16.26.1(supports-color@7.2.0)(typescript@5.9.3)))(stylelint@16.26.1(supports-color@7.2.0)(typescript@5.9.3))':
     dependencies:
@@ -9269,14 +9226,6 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-react@0.464.0(react@19.3.1):
-    dependencies:
-      react: 19.3.1
-
-  lucide-solid@0.464.0(solid-js@1.9.18):
-    dependencies:
-      solid-js: 1.9.18
-
   magic-string@1.4.5:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.6.0
@@ -10539,12 +10488,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  seroval-plugins@1.6.12(seroval@1.6.12):
-    dependencies:
-      seroval: 1.6.12
-
-  seroval@1.6.12: {}
-
   server-destroy@1.0.1: {}
 
   set-function-length@1.2.2:
@@ -10708,12 +10651,6 @@ snapshots:
       is-fullwidth-code-point: 5.1.0
 
   smol-toml@1.9.1: {}
-
-  solid-js@1.9.18:
-    dependencies:
-      csstype: 3.2.3
-      seroval: 1.6.12
-      seroval-plugins: 1.6.12(seroval@1.6.12)
 
   source-map-js@1.2.2: {}
 
