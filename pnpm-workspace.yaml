@@ -8,3 +8,6 @@ engineStrict: true
 shellEmulator: true
 
 strictDepBuilds: true
+
+minimumReleaseAgeExclude:
+  - "@acdh-oeaw/stylelint-config"
