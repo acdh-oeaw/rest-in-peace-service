@@ -20,7 +20,7 @@
 		"lint:styles:fix": "pnpm run lint:styles:check --fix",
 		"preinstall": "npx only-allow pnpm",
 		"prepare": "run-s setup",
-		"setup": "is-in-ci || simple-git-hooks",
+		"setup": "node ./scripts/setup.js",
 		"start": "astro preview",
 		"sync": "astro sync",
 		"test": "exit 0",
@@ -82,13 +82,12 @@
 		"eslint-plugin-regexp": "^3.3.3",
 		"eslint-plugin-simple-import-sort": "^14.0.0",
 		"is-in-ci": "^2.0.0",
-		"lint-staged": "^15.5.2",
+		"lefthook": "^2.2.2",
 		"npm-run-all2": "^7.0.2",
 		"oxfmt": "^0.79.0",
 		"oxlint": "^1.94.0",
 		"oxlint-tsgolint": "^7.0.2007",
 		"schema-dts": "^1.1.5",
-		"simple-git-hooks": "^2.14.0",
 		"stylelint": "^16.26.1",
 		"tailwindcss": "^4.3.5",
 		"type-fest": "^4.41.0",
@@ -105,25 +104,6 @@
 			"not dead",
 			"not op_mini all"
 		]
-	},
-	"lint-staged": {
-		"*.astro": [
-			"oxlint --fix --no-error-on-unmatched-pattern",
-			"stylelint --cache --fix",
-			"oxfmt --no-error-on-unmatched-pattern"
-		],
-		"*.css": [
-			"stylelint --cache --fix",
-			"oxfmt --no-error-on-unmatched-pattern"
-		],
-		"*.@(js|ts|tsx)": [
-			"oxlint --fix --no-error-on-unmatched-pattern",
-			"oxfmt --no-error-on-unmatched-pattern"
-		],
-		"*.!(astro|css|js|ts|tsx)": "oxfmt --no-error-on-unmatched-pattern"
-	},
-	"simple-git-hooks": {
-		"pre-commit": "pnpm exec lint-staged"
 	},
 	"stylelint": {
 		"extends": "@acdh-oeaw/stylelint-config"
