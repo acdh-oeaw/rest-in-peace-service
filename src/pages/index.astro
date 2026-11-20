@@ -40,42 +40,40 @@ const { hero } = page.data;
 					class="grid grid-cols-[repeat(auto-fill,minmax(min(320px,100%),1fr))] gap-x-6 gap-y-8"
 					role="list"
 				>
-					{
-						tombstones.map((tombstone) => {
-							return (
-								<li>
-									<article class="relative grid grid-rows-[320px_auto] overflow-hidden rounded-sm border border-gray-200 bg-white shadow-md">
-										<div class="relative border-b border-gray-200">
-											<Image
-												alt=""
-												class="absolute inset-0 size-full object-cover"
-												sizes="440px"
-												src={getImageImport(tombstone.data.image)}
-												widths={[440]}
-											/>
+					{tombstones.map((tombstone) => {
+						return (
+							<li>
+								<article class="relative grid grid-rows-[320px_auto] overflow-hidden rounded-sm border border-gray-200 bg-white shadow-md">
+									<div class="relative border-b border-gray-200">
+										<Image
+											alt=""
+											class="absolute inset-0 size-full object-cover"
+											sizes="440px"
+											src={getImageImport(tombstone.data.image)}
+											widths={[440]}
+										/>
+									</div>
+									<div class="grid gap-y-0.5 p-6">
+										<h2 class="text-lg font-semibold">
+											<a
+												class="after:absolute after:inset-0 after:size-full after:transition after:hover:bg-black/5"
+												href={`/tombstones/${tombstone.id}`}
+											>
+												{tombstone.data.shortTitle?.trim() || tombstone.data.title}
+											</a>
+										</h2>
+										<div class="text-neutral-600">
+											{t("IndexPage.deprecated-on")}{" "}
+											<time datetime={tombstone.data.deprecationDate}>
+												{formatter.date.format(new Date(tombstone.data.deprecationDate))}
+											</time>
+											.
 										</div>
-										<div class="grid gap-y-0.5 p-6">
-											<h2 class="text-lg font-semibold">
-												<a
-													class="after:absolute after:inset-0 after:size-full after:transition after:hover:bg-black/5"
-													href={`/tombstones/${tombstone.id}`}
-												>
-													{tombstone.data.shortTitle?.trim() || tombstone.data.title}
-												</a>
-											</h2>
-											<div class="text-neutral-600">
-												{t("IndexPage.deprecated-on")}{" "}
-												<time datetime={tombstone.data.deprecationDate}>
-													{formatter.date.format(new Date(tombstone.data.deprecationDate))}
-												</time>
-												.
-											</div>
-										</div>
-									</article>
-								</li>
-							);
-						})
-					}
+									</div>
+								</article>
+							</li>
+						);
+					})}
 				</ul>
 			</section>
 		</div>

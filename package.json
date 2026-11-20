@@ -10,8 +10,8 @@
 	"scripts": {
 		"build": "astro build",
 		"dev": "astro dev",
-		"format:check": "prettier . \"!./@(content|public)/**\" --cache --cache-location ./.prettiercache --check --ignore-path ./.gitignore",
-		"format:fix": "pnpm run format:check --write",
+		"format:check": "oxfmt --check",
+		"format:fix": "oxfmt",
 		"lint:check": "run-p --continue-on-error \"lint:*:check\"",
 		"lint:fix": "run-p --continue-on-error \"lint:*:fix\"",
 		"lint:code:check": "eslint . --cache",
@@ -66,10 +66,10 @@
 		"@acdh-oeaw/eslint-config-astro": "^2.0.17",
 		"@acdh-oeaw/eslint-config-playwright": "^2.0.15",
 		"@acdh-oeaw/eslint-config-react": "^2.0.14",
-		"@acdh-oeaw/prettier-config": "^2.0.1",
 		"@acdh-oeaw/stylelint-config": "^2.3.2",
 		"@acdh-oeaw/tsconfig": "^1.5.1",
 		"@astrojs/check": "^0.9.12",
+		"@astrojs/compiler-rs": "^0.5.3",
 		"@astrojs/ts-plugin": "^1.11.0",
 		"@playwright/test": "^1.65.1",
 		"@tailwindcss/typography": "^0.5.20",
@@ -87,8 +87,7 @@
 		"is-in-ci": "^2.0.0",
 		"lint-staged": "^15.5.2",
 		"npm-run-all2": "^7.0.2",
-		"prettier": "^3.10.1",
-		"prettier-plugin-astro": "^0.14.1",
+		"oxfmt": "^0.79.0",
 		"schema-dts": "^1.1.5",
 		"simple-git-hooks": "^2.14.0",
 		"stylelint": "^16.26.1",
@@ -112,17 +111,17 @@
 		"*.astro": [
 			"eslint --cache --fix",
 			"stylelint --cache --fix",
-			"prettier --cache --cache-location ./.prettiercache --write"
+			"oxfmt --no-error-on-unmatched-pattern"
 		],
 		"*.css": [
 			"stylelint --cache --fix",
-			"prettier --cache --cache-location ./.prettiercache --write"
+			"oxfmt --no-error-on-unmatched-pattern"
 		],
 		"*.@(js|ts|tsx)": [
 			"eslint --cache --fix",
-			"prettier --cache --cache-location ./.prettiercache --write"
+			"oxfmt --no-error-on-unmatched-pattern"
 		],
-		"*.!(astro|css|js|ts|tsx),!./@(content|public)/**": "prettier --cache --cache-location ./.prettiercache --ignore-unknown --write"
+		"*.!(astro|css|js|ts|tsx)": "oxfmt --no-error-on-unmatched-pattern"
 	},
 	"simple-git-hooks": {
 		"pre-commit": "pnpm exec lint-staged"

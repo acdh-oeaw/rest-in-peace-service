@@ -266,9 +266,6 @@ importers:
       '@acdh-oeaw/eslint-config-react':
         specifier: ^2.0.14
         version: 2.0.14(@acdh-oeaw/eslint-config@2.0.13(@eslint/config-helpers@0.4.2)(@typescript-eslint/utils@8.72.2(eslint@9.39.5(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@5.9.3))(eslint@9.39.5(jiti@2.7.0)(supports-color@7.2.0))(globals@16.5.0)(supports-color@7.2.0)(typescript@5.9.3))(eslint@9.39.5(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(ts-api-utils@2.5.0(typescript@5.9.3))(typescript@5.9.3)
-      '@acdh-oeaw/prettier-config':
-        specifier: ^2.0.1
-        version: 2.0.1(prettier@3.10.1)
       '@acdh-oeaw/stylelint-config':
         specifier: ^2.3.2
         version: 2.3.2(postcss-html@1.8.1)(stylelint-order@7.0.1(stylelint@16.26.1(supports-color@7.2.0)(typescript@5.9.3)))(stylelint@16.26.1(supports-color@7.2.0)(typescript@5.9.3))
@@ -278,6 +275,9 @@ importers:
       '@astrojs/check':
         specifier: ^0.9.12
         version: 0.9.12(prettier-plugin-astro@0.14.1)(prettier@3.10.1)(typescript@5.9.3)
+      '@astrojs/compiler-rs':
+        specifier: ^0.5.3
+        version: 0.5.3
       '@astrojs/ts-plugin':
         specifier: ^1.11.0
         version: 1.11.0(typescript@5.9.3)
@@ -329,12 +329,9 @@ importers:
       npm-run-all2:
         specifier: ^7.0.2
         version: 7.0.2
-      prettier:
-        specifier: ^3.10.1
-        version: 3.10.1
-      prettier-plugin-astro:
-        specifier: ^0.14.1
-        version: 0.14.1
+      oxfmt:
+        specifier: ^0.79.0
+        version: 0.79.0(@astrojs/compiler-rs@0.5.3)
       schema-dts:
         specifier: ^1.1.5
         version: 1.1.5
@@ -408,11 +405,6 @@ packages:
   '@acdh-oeaw/mdx-lib@0.2.0':
     resolution: {integrity: sha512-fg45dZsghDsFLNdHMT/gNGakYHi56v4Kk6Uj+xLuEut55Mzuk0LayJy6xZa+EHvR4FhayFBMCOqos3mcjWNfPw==}
     engines: {node: '>=22'}
-
-  '@acdh-oeaw/prettier-config@2.0.1':
-    resolution: {integrity: sha512-0M77qAD8Uhks+S6lPaKzq6ylwQJzjS33jE6uWKNM9dt7iJ1KHgsuZ3xVhWNmw5h/cUGYJvBi0V/ZSy65ow+9Ag==}
-    peerDependencies:
-      prettier: 3.x
 
   '@acdh-oeaw/stylelint-config@2.3.2':
     resolution: {integrity: sha512-1BetwUt3INSJZmIjaSYPIlpkSFJsJoD7HEUxS7nxB6zukG5Yho1/DJn/V+FryTOdl3EPAucGYR+bKEsiMeOVIQ==}
@@ -1453,6 +1445,128 @@ packages:
 
   '@oxc-project/types@0.159.0':
     resolution: {integrity: sha512-QWjWhxheluOJ82kDHNyps00UvRpQCtI34B5A/SzpgQycUD/79FuvT4I0aQIfE/bdPwKmX4QPftnywFBH6FxJhQ==}
+
+  '@oxfmt/binding-android-arm-eabi@0.79.0':
+    resolution: {integrity: sha512-xOCQ/rvokUXs8SxOQY5Wy2ukPaZJZ0PmdJovN0ryB1c8DVEtbcvliLdYtINUYh8QOTpmBOctIisSJk9tvh+J6w==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm]
+    os: [android]
+
+  '@oxfmt/binding-android-arm64@0.79.0':
+    resolution: {integrity: sha512-WMLDvCjjchUYtI6zXKOdzTDGm72BaYZiz1/VhB1rrxdakUZRlJh1aMr3CT6ui51uHcWVBycULIXSZHpw6u2pTQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [android]
+
+  '@oxfmt/binding-darwin-arm64@0.79.0':
+    resolution: {integrity: sha512-+LzSN7w7tULz96ntS1Uqe5oI00XZ0o/m/t3+eSfiQp3aTPnj2eGUafqEWryMLk84j7x9NiF+GEP2YT4/BfClgA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@oxfmt/binding-darwin-x64@0.79.0':
+    resolution: {integrity: sha512-KFiMRhKeiiooaS1dKc4r8AZgOrfOhwVe1yf/aRef+8BajJwtVjMtlsQl/BNRxtkFbq13GjEo/4Q+9YhFGU4o6g==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [darwin]
+
+  '@oxfmt/binding-freebsd-x64@0.79.0':
+    resolution: {integrity: sha512-lHVIp0g8ZOFKiqVscvttp+3HJkkRH6XkGgfAA0lVexIlE1mMFVp4V7RBdxz/P9p7T8pSNsYdapFWvdT21Mib9w==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [freebsd]
+
+  '@oxfmt/binding-linux-arm-gnueabihf@0.79.0':
+    resolution: {integrity: sha512-Pt35GoxiMUfnr+23cuzk07XQVvISDFxxPcp/aFVB87+RQvJoQaBo/XN7Re9XxgElvbELdyxTLnV9XM2aTfJeUA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm]
+    os: [linux]
+
+  '@oxfmt/binding-linux-arm-musleabihf@0.79.0':
+    resolution: {integrity: sha512-zPi9Dni58VKp3r1QUcFvnbJNfBr49qyecq0vlM4SaX/MSjmguq77VngirghDua5tyhIDfqdUMTCK2KRlnZFp/g==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm]
+    os: [linux]
+
+  '@oxfmt/binding-linux-arm64-gnu@0.79.0':
+    resolution: {integrity: sha512-XhRehATEWjwX7VVEgDUD+7pfHYncQIJaEU0qsHvEKtu9XX0QYzcKvXhU9+URfiGX9WRh3wy2Ow+YCc3EeHtImg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [linux]
+    libc: [glibc]
+
+  '@oxfmt/binding-linux-arm64-musl@0.79.0':
+    resolution: {integrity: sha512-gbVjFZYug0MEyqvuTAzXGNxFJmBqBO32o1Fud1lG8bGs6oVz48ZtNQyEcAzqrOwaaG+Sxtv4gVzcsfht9aqmkg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [linux]
+    libc: [musl]
+
+  '@oxfmt/binding-linux-ppc64-gnu@0.79.0':
+    resolution: {integrity: sha512-0N0sD3vnllyuiNh1r6zKvNXWE/CakcPKJAespg7XE2+sfvxpz5Q1iFah8sF5aedsOmVvbZaOPZcSHVmMosT1fA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [ppc64]
+    os: [linux]
+    libc: [glibc]
+
+  '@oxfmt/binding-linux-riscv64-gnu@0.79.0':
+    resolution: {integrity: sha512-YtjqUHolcX6cv0ZMZuKQCM4H0ae/okcowy0wGcPHJk4O+8zjy3TvNhzDQ1/KGCkMJO8Fwulm1JcPJsraVJ3p+w==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [riscv64]
+    os: [linux]
+    libc: [glibc]
+
+  '@oxfmt/binding-linux-riscv64-musl@0.79.0':
+    resolution: {integrity: sha512-H2gb9bEBr5tcdP5FU8JYTfgOavXDorWcAAlwci/zEKF2jzgh/oEr/SAw6aHB9n3FLEvnKvOh0A1fjku+vgYoUA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [riscv64]
+    os: [linux]
+    libc: [musl]
+
+  '@oxfmt/binding-linux-s390x-gnu@0.79.0':
+    resolution: {integrity: sha512-aZUbyWW5dSOxT/u6suWc4S9GVDt7YPPNMKQon+z79M8dpXmosadcFHAb7jBhpU7Hdsd2GN6/y3nd0JFTsGddZw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [s390x]
+    os: [linux]
+    libc: [glibc]
+
+  '@oxfmt/binding-linux-x64-gnu@0.79.0':
+    resolution: {integrity: sha512-5pW/ZHYfjjQ71gQR+EKzDz8ZzWIDHlTUtWtxVFNgZbKxVZnRxiSXVrllbjpJtx1q8VtSPZ+Lyg9BLny3yw+PTA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [linux]
+    libc: [glibc]
+
+  '@oxfmt/binding-linux-x64-musl@0.79.0':
+    resolution: {integrity: sha512-3IVUerTDB7Dvd90c1EurAzlVnlE9Azl7Wn8e33qX3wL/IqnslF+P7HvwkD+VeMbHxRtuw0EEBGSArZFXpUAZrQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [linux]
+    libc: [musl]
+
+  '@oxfmt/binding-openharmony-arm64@0.79.0':
+    resolution: {integrity: sha512-C5QDgJBtu9+/2BQScoP7ynv54PLOqfoSqhRWwI0D0RPOwYD4tYj0TUdJbXMO1fNegL/5zJiSOxkq6II2xvttWg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [openharmony]
+
+  '@oxfmt/binding-win32-arm64-msvc@0.79.0':
+    resolution: {integrity: sha512-zlW1m8M49vNGgqQF/ze80KW8pZMicnW2XDZGBHuYtXTRYn4ewvgpqN9wwoqb6uLZZfb1R1zaQWKEB8cs7KYjwA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [win32]
+
+  '@oxfmt/binding-win32-ia32-msvc@0.79.0':
+    resolution: {integrity: sha512-wbb7hFv2wK3SCTfu8dl1ydNsXM5dmH+PJMU3sojCkfKcG29VDpITL5/AtouCzXjkOc90QRkcAZcg36gP0KqoHA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [ia32]
+    os: [win32]
+
+  '@oxfmt/binding-win32-x64-msvc@0.79.0':
+    resolution: {integrity: sha512-JLaeaQ+4LkQiVXY06JIV1dBFEDJzssvDieK/3Poi6CsY+c4UxghZVrrsfcKGJ5R/0F2Sw3C5Lf5Hu0sM5qJfPw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [win32]
 
   '@pkgr/core@0.3.6':
     resolution: {integrity: sha512-SEeaJLb3qBNF/OaXnaR1NmmBbFYk1zC0ZH/52fATcRPLFg/p791YrcyFFy44Bo9sLaGuSuLp5Q6axbb/O+v/RA==}
@@ -4172,6 +4286,22 @@ packages:
     resolution: {integrity: sha512-19YVAg7T+WTrxggPukVq7DjTv6+PJ867TmhCvBsYwmbFCsZd344rq2Ld1p0wo8f8Qrrhgp82c6FJRqdXWtSEhg==}
     engines: {node: '>= 0.4'}
 
+  oxfmt@0.79.0:
+    resolution: {integrity: sha512-92iLHGxAgtYk6jLp/1ZBnEeABveNduHZgMDQj7tyqO9iafuJG3q+YHJq0R5Aa4YT+E6xswMQXdmPZYMwynS8ig==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    hasBin: true
+    peerDependencies:
+      '@astrojs/compiler-rs': ^0.5.0
+      svelte: ^5.0.0
+      vite-plus: '*'
+    peerDependenciesMeta:
+      '@astrojs/compiler-rs':
+        optional: true
+      svelte:
+        optional: true
+      vite-plus:
+        optional: true
+
   p-limit@3.1.0:
     resolution: {integrity: sha512-TYOanM3wGwNGsZN2cVTYPArw454xnXj5qmWF1bEoAc4+cU/ol7GVh7odevjp1FNHduHc3KZMcFduxU5Xc6uJRQ==}
     engines: {node: '>=10'}
@@ -4919,6 +5049,10 @@ packages:
     resolution: {integrity: sha512-wXR/dYpcqKmfWpEdZjiKJOwCNFndD0DMnrW/cYjVGttEkBfVgcLFHoNrlj47mjOVic9yyNu65alsgF4NQyTa2g==}
     engines: {node: '>=12.0.0'}
 
+  tinypool@2.2.0:
+    resolution: {integrity: sha512-jBrmx4lYmaC9k/mgPbylxs7kBUxHtD8256up+HjLaDFfXScKJQyil+SWXSvhAtT7XHo+yTVlpB81PGmHP8oLSQ==}
+    engines: {node: ^20.0.0 || >=22.0.0}
+
   tinyps@0.5.2:
     resolution: {integrity: sha512-sYhvdbpuo2rGE7u/jPUMiZz4H2LCaOodUtRD9ot4DLNFQbr884g9zozoJnxLI+1r4hXqWkmdHUl8Yig2Rllxxw==}
 
@@ -5542,10 +5676,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@acdh-oeaw/prettier-config@2.0.1(prettier@3.10.1)':
-    dependencies:
-      prettier: 3.10.1
-
   '@acdh-oeaw/stylelint-config@2.3.2(postcss-html@1.8.1)(stylelint-order@7.0.1(stylelint@16.26.1(supports-color@7.2.0)(typescript@5.9.3)))(stylelint@16.26.1(supports-color@7.2.0)(typescript@5.9.3))':
     dependencies:
       stylelint: 16.26.1(supports-color@7.2.0)(typescript@5.9.3)
@@ -5635,7 +5765,8 @@ snapshots:
     dependencies:
       '@astrojs/compiler-binding': 0.5.3
 
-  '@astrojs/compiler@2.13.1': {}
+  '@astrojs/compiler@2.13.1':
+    optional: true
 
   '@astrojs/compiler@3.0.1': {}
 
@@ -6694,6 +6825,63 @@ snapshots:
   '@oxc-project/types@0.156.0': {}
 
   '@oxc-project/types@0.159.0': {}
+
+  '@oxfmt/binding-android-arm-eabi@0.79.0':
+    optional: true
+
+  '@oxfmt/binding-android-arm64@0.79.0':
+    optional: true
+
+  '@oxfmt/binding-darwin-arm64@0.79.0':
+    optional: true
+
+  '@oxfmt/binding-darwin-x64@0.79.0':
+    optional: true
+
+  '@oxfmt/binding-freebsd-x64@0.79.0':
+    optional: true
+
+  '@oxfmt/binding-linux-arm-gnueabihf@0.79.0':
+    optional: true
+
+  '@oxfmt/binding-linux-arm-musleabihf@0.79.0':
+    optional: true
+
+  '@oxfmt/binding-linux-arm64-gnu@0.79.0':
+    optional: true
+
+  '@oxfmt/binding-linux-arm64-musl@0.79.0':
+    optional: true
+
+  '@oxfmt/binding-linux-ppc64-gnu@0.79.0':
+    optional: true
+
+  '@oxfmt/binding-linux-riscv64-gnu@0.79.0':
+    optional: true
+
+  '@oxfmt/binding-linux-riscv64-musl@0.79.0':
+    optional: true
+
+  '@oxfmt/binding-linux-s390x-gnu@0.79.0':
+    optional: true
+
+  '@oxfmt/binding-linux-x64-gnu@0.79.0':
+    optional: true
+
+  '@oxfmt/binding-linux-x64-musl@0.79.0':
+    optional: true
+
+  '@oxfmt/binding-openharmony-arm64@0.79.0':
+    optional: true
+
+  '@oxfmt/binding-win32-arm64-msvc@0.79.0':
+    optional: true
+
+  '@oxfmt/binding-win32-ia32-msvc@0.79.0':
+    optional: true
+
+  '@oxfmt/binding-win32-x64-msvc@0.79.0':
+    optional: true
 
   '@pkgr/core@0.3.6': {}
 
@@ -9874,6 +10062,31 @@ snapshots:
       object-keys: 1.1.1
       safe-push-apply: 1.0.0
 
+  oxfmt@0.79.0(@astrojs/compiler-rs@0.5.3):
+    dependencies:
+      tinypool: 2.2.0
+    optionalDependencies:
+      '@astrojs/compiler-rs': 0.5.3
+      '@oxfmt/binding-android-arm-eabi': 0.79.0
+      '@oxfmt/binding-android-arm64': 0.79.0
+      '@oxfmt/binding-darwin-arm64': 0.79.0
+      '@oxfmt/binding-darwin-x64': 0.79.0
+      '@oxfmt/binding-freebsd-x64': 0.79.0
+      '@oxfmt/binding-linux-arm-gnueabihf': 0.79.0
+      '@oxfmt/binding-linux-arm-musleabihf': 0.79.0
+      '@oxfmt/binding-linux-arm64-gnu': 0.79.0
+      '@oxfmt/binding-linux-arm64-musl': 0.79.0
+      '@oxfmt/binding-linux-ppc64-gnu': 0.79.0
+      '@oxfmt/binding-linux-riscv64-gnu': 0.79.0
+      '@oxfmt/binding-linux-riscv64-musl': 0.79.0
+      '@oxfmt/binding-linux-s390x-gnu': 0.79.0
+      '@oxfmt/binding-linux-x64-gnu': 0.79.0
+      '@oxfmt/binding-linux-x64-musl': 0.79.0
+      '@oxfmt/binding-openharmony-arm64': 0.79.0
+      '@oxfmt/binding-win32-arm64-msvc': 0.79.0
+      '@oxfmt/binding-win32-ia32-msvc': 0.79.0
+      '@oxfmt/binding-win32-x64-msvc': 0.79.0
+
   p-limit@3.1.0:
     dependencies:
       yocto-queue: 0.1.0
@@ -10003,6 +10216,7 @@ snapshots:
       '@astrojs/compiler': 2.13.1
       prettier: 3.10.1
       sass-formatter: 0.7.9
+    optional: true
 
   prettier@3.10.1: {}
 
@@ -10377,7 +10591,8 @@ snapshots:
     dependencies:
       queue-microtask: 1.2.3
 
-  s.color@0.0.15: {}
+  s.color@0.0.15:
+    optional: true
 
   safe-array-concat@1.1.4:
     dependencies:
@@ -10401,6 +10616,7 @@ snapshots:
   sass-formatter@0.7.9:
     dependencies:
       suf-log: 2.5.3
+    optional: true
 
   satteri@0.11.7:
     dependencies:
@@ -10822,6 +11038,7 @@ snapshots:
   suf-log@2.5.3:
     dependencies:
       s.color: 0.0.15
+    optional: true
 
   superstruct@1.0.4: {}
 
@@ -10879,6 +11096,8 @@ snapshots:
     dependencies:
       fdir: 6.5.0(picomatch@4.0.7)
       picomatch: 4.0.7
+
+  tinypool@2.2.0: {}
 
   tinyps@0.5.2: {}
 

@@ -33,9 +33,7 @@ const { default: Content } = await tombstone.compile(content);
 <PageLayout locale={locale} title={documentTitle}>
 	<MainContent class="bg-neutral-50">
 		<section class={pageSection}>
-			<article
-				class="relative mx-auto grid w-full max-w-(--breakpoint-sm) grid-rows-[480px_auto] overflow-hidden rounded-md border border-gray-200 bg-white shadow-md"
-			>
+			<article class="relative mx-auto grid w-full max-w-(--breakpoint-sm) grid-rows-[480px_auto] overflow-hidden rounded-md border border-gray-200 bg-white shadow-md">
 				<div class="relative border-b border-gray-200">
 					<Image
 						alt=""
@@ -68,34 +66,31 @@ const { default: Content } = await tombstone.compile(content);
 							</dt>
 							<dd>{url}</dd>
 						</div>
-						{
-							repo ? (
-								<div>
-									<dt class="text-xs font-semibold uppercase tracking-wider text-neutral-600">
-										{t("collections.tombstones.repo")}
-									</dt>
-									<dd>
-										<a href={repo}>{repo}</a>
-									</dd>
-								</div>
-							) : null
-						}
-					</dl>
-					{
-						content.length ? (
-							<div class="prose">
-								<Content />
+						{repo ? (
+							<div>
+								<dt class="text-xs font-semibold uppercase tracking-wider text-neutral-600">
+									{t("collections.tombstones.repo")}
+								</dt>
+								<dd>
+									<a href={repo}>{repo}</a>
+								</dd>
 							</div>
-						) : null
-					}
+						) : null}
+					</dl>
+					{content.length ? (
+						<div class="prose">
+							<Content />
+						</div>
+					) : null}
 					<hr />
 					<div class="text-sm text-neutral-700">
-						The service <em>{title}</em>, previously accessible at {url} has been deprecated since {
-							formatter.date.format(new Date(deprecationDate))
-						}. For further information please contact the <a
-							class="underline hover:no-underline"
-							href="mailto: acdh-helpdesk@oeaw.ac.at">ACDH Helpdesk</a
-						>.
+						The service <em>{title}</em>, previously accessible at {url} has been deprecated since{" "}
+						{formatter.date.format(new Date(deprecationDate))}. For further information please
+						contact the{" "}
+						<a class="underline hover:no-underline" href="mailto: acdh-helpdesk@oeaw.ac.at">
+							ACDH Helpdesk
+						</a>
+						.
 					</div>
 				</div>
 			</article>
