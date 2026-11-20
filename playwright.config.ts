@@ -1,7 +1,7 @@
 import { join } from "node:path";
 
 import { defineConfig, devices } from "@playwright/test";
-import { isCI } from "ci-info";
+import isCI from "is-in-ci";
 
 for (const envFilePath of [".env.test.local", ".env.local", ".env.test", ".env"]) {
 	/** Earlier files take precedence, because existing variables are not overwritten. */
