@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* oxlint-disable typescript/no-unsafe-return */
+/* oxlint-disable typescript/no-unsafe-assignment */
 
 import type { IntlMessages, Locale } from "@/config/i18n.config";
 

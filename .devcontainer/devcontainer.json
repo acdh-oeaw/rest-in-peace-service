@@ -6,7 +6,6 @@
 			"extensions": [
 				"astro-build.astro-vscode",
 				"bradlc.vscode-tailwindcss",
-				"dbaeumer.vscode-eslint",
 				"editorconfig.editorconfig",
 				"oxc.oxc-vscode",
 				"mikestead.dotenv",

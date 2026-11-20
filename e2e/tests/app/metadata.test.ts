@@ -98,7 +98,7 @@ test("should add json+ld metadata", async ({ createIndexPage }) => {
 		const metadata = await indexPage.page
 			.locator('script[type="application/ld+json"]')
 			.textContent();
-		// eslint-disable-next-line playwright/prefer-web-first-assertions
+		// oxlint-disable-next-line playwright/prefer-web-first-assertions
 		expect(metadata).toBe(
 			JSON.stringify({
 				"@context": "https://schema.org",

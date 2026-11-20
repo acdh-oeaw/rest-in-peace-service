@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/triple-slash-reference */
+/* oxlint-disable typescript/triple-slash-reference */
 
 /// <reference path="../.astro/actions.d.ts" />
 /// <reference path="../.astro/types.d.ts" />

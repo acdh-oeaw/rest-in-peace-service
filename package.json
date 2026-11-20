@@ -14,8 +14,8 @@
 		"format:fix": "oxfmt",
 		"lint:check": "run-p --continue-on-error \"lint:*:check\"",
 		"lint:fix": "run-p --continue-on-error \"lint:*:fix\"",
-		"lint:code:check": "eslint . --cache",
-		"lint:code:fix": "pnpm run lint:code:check --fix",
+		"lint:code:check": "oxlint",
+		"lint:code:fix": "oxlint --fix",
 		"lint:styles:check": "stylelint \"./**/*.@(astro|css)\" --cache --ignore-path ./.gitignore",
 		"lint:styles:fix": "pnpm run lint:styles:check --fix",
 		"preinstall": "npx only-allow pnpm",
@@ -62,10 +62,6 @@
 		"vite": "^8.3.8"
 	},
 	"devDependencies": {
-		"@acdh-oeaw/eslint-config": "^2.0.13",
-		"@acdh-oeaw/eslint-config-astro": "^2.0.17",
-		"@acdh-oeaw/eslint-config-playwright": "^2.0.15",
-		"@acdh-oeaw/eslint-config-react": "^2.0.14",
 		"@acdh-oeaw/stylelint-config": "^2.3.2",
 		"@acdh-oeaw/tsconfig": "^1.5.1",
 		"@astrojs/check": "^0.9.12",
@@ -81,12 +77,16 @@
 		"@types/react-dom": "^19.3.0",
 		"axe-core": "^4.14.1",
 		"axe-playwright": "^2.2.2",
-		"eslint": "^9.39.5",
-		"eslint-config-flat-gitignore": "^0.3.0",
+		"eslint-plugin-playwright": "^2.12.2",
+		"eslint-plugin-react": "^7.37.5",
+		"eslint-plugin-regexp": "^3.3.3",
+		"eslint-plugin-simple-import-sort": "^14.0.0",
 		"is-in-ci": "^2.0.0",
 		"lint-staged": "^15.5.2",
 		"npm-run-all2": "^7.0.2",
 		"oxfmt": "^0.79.0",
+		"oxlint": "^1.94.0",
+		"oxlint-tsgolint": "^7.0.2007",
 		"schema-dts": "^1.1.5",
 		"simple-git-hooks": "^2.14.0",
 		"stylelint": "^16.26.1",
@@ -108,7 +108,7 @@
 	},
 	"lint-staged": {
 		"*.astro": [
-			"eslint --cache --fix",
+			"oxlint --fix --no-error-on-unmatched-pattern",
 			"stylelint --cache --fix",
 			"oxfmt --no-error-on-unmatched-pattern"
 		],
@@ -117,7 +117,7 @@
 			"oxfmt --no-error-on-unmatched-pattern"
 		],
 		"*.@(js|ts|tsx)": [
-			"eslint --cache --fix",
+			"oxlint --fix --no-error-on-unmatched-pattern",
 			"oxfmt --no-error-on-unmatched-pattern"
 		],
 		"*.!(astro|css|js|ts|tsx)": "oxfmt --no-error-on-unmatched-pattern"

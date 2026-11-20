@@ -54,7 +54,7 @@ export const env = createEnv({
 		if (error instanceof v.ValiError) {
 			const message = "Invalid environment variables";
 
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			// oxlint-disable-next-line typescript/no-explicit-any
 			log.error(`${message}:`, v.flatten<any>(error.issues).nested);
 
 			const validationError = new Error(message);
