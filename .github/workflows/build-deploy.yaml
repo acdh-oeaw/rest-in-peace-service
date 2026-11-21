@@ -74,7 +74,7 @@ jobs:
       - name: Read pnpm version from package.json
         id: pnpm
         run: |
-          PNPM_VERSION=$(jq --exit-status --raw-output '.packageManager | select(startswith("pnpm@")) | ltrimstr("pnpm@") | split("+")[0]' package.json)
+          PNPM_VERSION=$(jq --exit-status --raw-output '.devEngines.packageManager | select(.name == "pnpm") | .version' package.json)
           echo "version=$PNPM_VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Ensure astro build artefacts folder exists
