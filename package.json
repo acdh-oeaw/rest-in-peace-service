@@ -3,21 +3,6 @@
 	"private": true,
 	"license": "MIT",
 	"type": "module",
-	"engines": {
-		"node": "^26"
-	},
-	"devEngines": {
-		"runtime": {
-			"name": "node",
-			"version": "^26",
-			"onFail": "download"
-		},
-		"packageManager": {
-			"name": "pnpm",
-			"version": "12.21.0",
-			"onFail": "error"
-		}
-	},
 	"scripts": {
 		"build": "astro build",
 		"dev": "astro dev",
@@ -36,7 +21,7 @@
 	},
 	"dependencies": {
 		"@acdh-oeaw/keystatic-lib": "^0.8.2",
-		"@acdh-oeaw/lib": "^0.1.12",
+		"@acdh-oeaw/lib": "^0.3.7",
 		"@acdh-oeaw/mdx-lib": "^0.2.0",
 		"@acdh-oeaw/validate-env": "^0.4.0",
 		"@astrojs/mdx": "^8.1.6",
@@ -106,5 +91,20 @@
 	},
 	"stylelint": {
 		"extends": "@acdh-oeaw/stylelint-config"
+	},
+	"devEngines": {
+		"packageManager": {
+			"name": "pnpm",
+			"version": "^12.21.0",
+			"onFail": "download"
+		},
+		"runtime": {
+			"name": "node",
+			"version": "^26",
+			"onFail": "download"
+		}
+	},
+	"engines": {
+		"node": "^26"
 	}
 }
