@@ -81,7 +81,6 @@
 		"eslint-plugin-playwright": "^2.12.2",
 		"eslint-plugin-react": "^7.37.5",
 		"eslint-plugin-regexp": "^3.3.3",
-		"eslint-plugin-simple-import-sort": "^14.0.0",
 		"is-in-ci": "^2.0.0",
 		"lefthook": "^2.2.2",
 		"oxfmt": "^0.79.0",

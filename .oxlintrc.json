@@ -1,7 +1,7 @@
 {
 	"$schema": "./node_modules/oxlint/configuration_schema.json",
 	"plugins": ["typescript", "import", "unicorn"],
-	"jsPlugins": ["eslint-plugin-simple-import-sort", "eslint-plugin-regexp"],
+	"jsPlugins": ["eslint-plugin-regexp"],
 	"categories": {
 		"correctness": "off"
 	},
@@ -196,8 +196,6 @@
 		"regexp/strict": "error",
 		"regexp/use-ignore-case": "error",
 		"require-yield": "error",
-		"simple-import-sort/exports": "error",
-		"simple-import-sort/imports": "error",
 		"typescript/adjacent-overload-signatures": "error",
 		"typescript/array-type": [
 			"error",
