@@ -10,4 +10,4 @@ shellEmulator: true
 strictDepBuilds: true
 
 minimumReleaseAgeExclude:
-  - "@acdh-oeaw/stylelint-config"
+  - "@acdh-oeaw/keystatic-lib"

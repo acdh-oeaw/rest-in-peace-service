@@ -1,10 +1,10 @@
-import { createAssetOptions, withI18nPrefix } from "@acdh-oeaw/keystatic-lib";
+import { createAssetOptions, type Paths, withI18nPrefix } from "@acdh-oeaw/keystatic-lib";
 import { fields } from "@keystatic/core";
 
 import type { Locale } from "@/config/i18n.config";
 import { linkKinds } from "@/lib/keystatic/component-options";
 
-export function createLinkSchema(assetPath: `/${string}/`, locale: Locale) {
+export function createLinkSchema<TPath extends `/${string}/`>(paths: Paths<TPath>, locale: Locale) {
 	return fields.conditional(
 		fields.select({
 			label: "Kind",
@@ -15,7 +15,7 @@ export function createLinkSchema(assetPath: `/${string}/`, locale: Locale) {
 			download: fields.file({
 				label: "Download",
 				validation: { isRequired: true },
-				...createAssetOptions(assetPath),
+				...createAssetOptions(paths.downloadPath),
 			}),
 			external: fields.url({
 				label: "URL",

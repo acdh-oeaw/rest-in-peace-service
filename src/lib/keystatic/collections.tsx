@@ -54,7 +54,7 @@ export const createTombstones = createCollection("/tombstones/", (paths) => {
 			}),
 			content: fields.mdx({
 				label: "Content",
-				options: createContentFieldOptions(paths.assetPath),
+				options: createContentFieldOptions(paths),
 				components: {},
 			}),
 		},

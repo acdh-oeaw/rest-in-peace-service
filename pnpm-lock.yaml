@@ -176,8 +176,8 @@ importers:
   .:
     dependencies:
       '@acdh-oeaw/keystatic-lib':
-        specifier: ^0.4.1
-        version: 0.4.1(@keystatic/core@0.6.10(@keystar/ui@0.10.1(react-aria@3.50.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react-stately@3.48.0(react@19.3.1))(react@19.3.1))(react-aria@3.50.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react-stately@3.48.0(react@19.3.1))(react@19.3.1)(supports-color@7.2.0))
+        specifier: ^0.8.2
+        version: 0.8.2(@keystar/ui@0.10.1(react-aria@3.50.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react-stately@3.48.0(react@19.3.1))(react@19.3.1))(@keystatic/core@0.6.10(@keystar/ui@0.10.1(react-aria@3.50.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react-stately@3.48.0(react@19.3.1))(react@19.3.1))(react-aria@3.50.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react-stately@3.48.0(react@19.3.1))(react@19.3.1)(supports-color@7.2.0))(react@19.3.1)
       '@acdh-oeaw/lib':
         specifier: ^0.1.12
         version: 0.1.12
@@ -185,8 +185,8 @@ importers:
         specifier: ^0.2.0
         version: 0.2.0(supports-color@7.2.0)
       '@acdh-oeaw/validate-env':
-        specifier: ^0.0.3
-        version: 0.0.3
+        specifier: ^0.4.0
+        version: 0.4.0(typescript@6.0.3)
       '@astrojs/mdx':
         specifier: ^8.1.6
         version: 8.1.6(@astrojs/markdown-satteri@0.4.10)(astro@7.4.13(@types/node@26.6.6)(esbuild@0.27.7)(idb-keyval@6.3.0)(jiti@2.7.0)(yaml@2.9.1))
@@ -352,11 +352,13 @@ packages:
       graphql:
         optional: true
 
-  '@acdh-oeaw/keystatic-lib@0.4.1':
-    resolution: {integrity: sha512-p4UrmoMb8cTp0eQhh7RscBWv13ygAsPPOYLOow3s7mjG/P4qLyl+4rAPf/wEEzT1FnGJ001Awj48C/J9XS9SXw==}
-    engines: {node: '>=22', pnpm: 9.x}
+  '@acdh-oeaw/keystatic-lib@0.8.2':
+    resolution: {integrity: sha512-HX5iBUTDBUY+SuCLCDD6dwmPVDEe1CFS8KlQGkDwh/AUv+t/tYrpiZkIeaiU4bzxxakpN6cw1xSkCZcV5ugSJg==}
+    engines: {node: 22.x || 24.x || 26.x}
     peerDependencies:
+      '@keystar/ui': 0.x
       '@keystatic/core': 0.x
+      react: 19.x
 
   '@acdh-oeaw/lib@0.1.12':
     resolution: {integrity: sha512-yNAjUxcoqvEXX+YsqWqOqCOJeFg6oYL2Q+bVdhu6LEQU1MGpcMbo7haSTX12X8UYZjIU6oWpHrZfdKZZxRH23Q==}
@@ -381,9 +383,11 @@ packages:
     peerDependencies:
       typescript: '>=5.8'
 
-  '@acdh-oeaw/validate-env@0.0.3':
-    resolution: {integrity: sha512-dP7ZGC533M/Hfebriu5THBQt9DXOuldywY0U5893JMBuAXrGr5f+ONuDE5tk5zp5XHu2Lks+VDkg2wX+TQ03ow==}
-    engines: {node: '>=20', pnpm: '>=9'}
+  '@acdh-oeaw/validate-env@0.4.0':
+    resolution: {integrity: sha512-DqqNyhJu7+SY968FoioTYyS3KldtfZ4+IWow2L6FNKC03B4EzqLPiUUs+PxSkc+oHg7m+EXSiWnzVK532KpAfA==}
+    engines: {node: ^22 || ^24 || ^26}
+    peerDependencies:
+      typescript: '>=5.4'
 
   '@antfu/install-pkg@2.1.0':
     resolution: {integrity: sha512-sdg9NxU3zR4Mnawfbc/x6GB5Wf17WYud5qOuEuxXjaKpYpMkISSJEjItGebXJ2bQ4DIcly4NYH23mtkGJjvKUw==}
@@ -4825,11 +4829,13 @@ snapshots:
     optionalDependencies:
       graphql: 16.15.0
 
-  '@acdh-oeaw/keystatic-lib@0.4.1(@keystatic/core@0.6.10(@keystar/ui@0.10.1(react-aria@3.50.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react-stately@3.48.0(react@19.3.1))(react@19.3.1))(react-aria@3.50.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react-stately@3.48.0(react@19.3.1))(react@19.3.1)(supports-color@7.2.0))':
+  '@acdh-oeaw/keystatic-lib@0.8.2(@keystar/ui@0.10.1(react-aria@3.50.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react-stately@3.48.0(react@19.3.1))(react@19.3.1))(@keystatic/core@0.6.10(@keystar/ui@0.10.1(react-aria@3.50.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react-stately@3.48.0(react@19.3.1))(react@19.3.1))(react-aria@3.50.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react-stately@3.48.0(react@19.3.1))(react@19.3.1)(supports-color@7.2.0))(react@19.3.1)':
     dependencies:
+      '@keystar/ui': 0.10.1(react-aria@3.50.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react-stately@3.48.0(react@19.3.1))(react@19.3.1)
       '@keystatic/core': 0.6.10(@keystar/ui@0.10.1(react-aria@3.50.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react-stately@3.48.0(react@19.3.1))(react@19.3.1))(react-aria@3.50.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react-stately@3.48.0(react@19.3.1))(react@19.3.1)(supports-color@7.2.0)
       '@sindresorhus/slugify': 2.2.1
       '@types/mdx': 2.0.14
+      react: 19.3.1
 
   '@acdh-oeaw/lib@0.1.12': {}
 
@@ -4879,7 +4885,9 @@ snapshots:
     dependencies:
       typescript: 6.0.3
 
-  '@acdh-oeaw/validate-env@0.0.3': {}
+  '@acdh-oeaw/validate-env@0.4.0(typescript@6.0.3)':
+    dependencies:
+      typescript: 6.0.3
 
   '@antfu/install-pkg@2.1.0':
     dependencies:
