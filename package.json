@@ -24,7 +24,7 @@
 		"setup": "node ./scripts/setup.js",
 		"start": "astro preview",
 		"styles:check": "stylelint \"./**/*.@(astro|css)\" --cache --ignore-path ./.gitignore",
-		"styles:fix": "pnpm run styles:check --fix",
+		"styles:fix": "stylelint \"./**/*.@(astro|css)\" --cache --fix --ignore-path ./.gitignore",
 		"sync": "astro sync",
 		"test": "exit 0",
 		"test:e2e": "playwright test",
