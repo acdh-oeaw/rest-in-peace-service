@@ -7,6 +7,11 @@
 		"node": "^26"
 	},
 	"devEngines": {
+		"runtime": {
+			"name": "node",
+			"version": "^26",
+			"onFail": "download"
+		},
 		"packageManager": {
 			"name": "pnpm",
 			"version": "12.21.0",
