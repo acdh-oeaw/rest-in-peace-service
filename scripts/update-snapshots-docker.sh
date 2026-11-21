@@ -26,6 +26,6 @@ docker run --rm --init --ipc=host \
 		export PUBLIC_APP_BASE_URL=http://localhost:3000
 		pnpm install --frozen-lockfile
 		pnpm run build
-		pnpm run test:e2e:update-snapshots "$@"
+		pnpm exec playwright test --update-snapshots "$@"
 		cp -R e2e/snapshots/. /snapshots/
 	' bash "$@"
