@@ -1,13 +1,17 @@
 allowBuilds:
   esbuild: true
-  sharp: true
   lefthook: true
+  sharp: true
+
+autoDedupe: true
 
 engineStrict: true
 
+lockfile:
+  includeResolutionSettings: true
+
+minimumReleaseAge: 720
+
+saveTypes: true
+
 shellEmulator: true
-
-strictDepBuilds: true
-
-minimumReleaseAgeExclude:
-  - "@acdh-oeaw/keystatic-lib"
