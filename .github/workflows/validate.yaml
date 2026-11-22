@@ -42,7 +42,6 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        node-version: [26.x]
         # Generate visual snapshots with test:e2e:update-snapshots:docker on Ubuntu 26.04.
         os: [ubuntu-26.04]
 
@@ -50,24 +49,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v6
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v6
+      # Installs pnpm and node (from `devEngines`).
+      - name: Install pnpm and node
+        id: pnpm
+        uses: pnpm/setup@v3
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: "pnpm"
+          cache: true
+          install: false
+
+      - name: Install dependencies
+        run: pnpm install --no-runtime
 
       - name: Cache astro build artefacts
         uses: actions/cache@v4
         with:
           path: node_modules/.astro/
-          key: ${{ runner.os }}-astro-${{ matrix.node-version }}-${{ github.run_id }}
-          restore-keys: ${{ runner.os }}-astro-${{ matrix.node-version }}
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+          key: ${{ runner.os }}-astro-${{ steps.pnpm.outputs.runtime-version }}-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-astro-${{ steps.pnpm.outputs.runtime-version }}
 
       - name: Format
         run: pnpm run format:check
