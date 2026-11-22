@@ -1,10 +1,17 @@
 allowBuilds:
   esbuild: true
+  lefthook: true
   sharp: true
-  simple-git-hooks: true
+
+autoDedupe: true
 
 engineStrict: true
 
-shellEmulator: true
+lockfile:
+  includeResolutionSettings: true
 
-strictDepBuilds: true
+minimumReleaseAge: 720
+
+saveTypes: true
+
+shellEmulator: true

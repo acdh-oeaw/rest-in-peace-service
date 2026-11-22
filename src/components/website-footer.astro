@@ -8,9 +8,7 @@ const { t } = await createI18n(locale);
 ---
 
 <footer class="border-t border-neutral-200 bg-neutral-50">
-	<section
-		class="container border-t border-neutral-200 bg-neutral-100 py-2 text-center text-xs text-neutral-700"
-	>
+	<section class="container border-t border-neutral-200 bg-neutral-100 py-2 text-center text-xs text-neutral-700">
 		<div>
 			<span>
 				&copy;
@@ -18,16 +16,19 @@ const { t } = await createI18n(locale);
 					ACDH
 				</a>
 				{new Date().getUTCFullYear()}
-			</span> |
+			</span>{" "}
+			|
 			<Link class="underline transition hover:no-underline" href="/imprint">
 				{t("WebsiteFooter.links.imprint")}
-			</Link> |
+			</Link>{" "}
+			|
 			<a
 				class="underline transition hover:no-underline"
 				href="https://github.com/acdh-oeaw/rest-in-peace-service"
 			>
 				{t("WebsiteFooter.links.repo")}
-			</a> |
+			</a>{" "}
+			|
 			<Link class="underline transition hover:no-underline" href="/feed.xml">
 				{t("WebsiteFooter.links.feed")}
 			</Link>

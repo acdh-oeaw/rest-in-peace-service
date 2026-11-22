@@ -1,0 +1,18 @@
+# @see https://lefthook.dev/configuration/
+
+pre-commit:
+  piped: true
+  jobs:
+    - name: lint scripts
+      glob: "*.{astro,js,ts,tsx}"
+      run: pnpm exec oxlint --fix --no-error-on-unmatched-pattern {staged_files}
+      stage_fixed: true
+
+    - name: lint styles
+      glob: "*.{astro,css}"
+      run: pnpm exec stylelint --cache --fix {staged_files}
+      stage_fixed: true
+
+    - name: format
+      run: pnpm exec oxfmt --no-error-on-unmatched-pattern {staged_files}
+      stage_fixed: true

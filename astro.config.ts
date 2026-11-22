@@ -3,8 +3,8 @@ import node from "@astrojs/node";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from "astro/config";
 import icon from "astro-icon";
+import { defineConfig } from "astro/config";
 import { loadEnv } from "vite";
 
 const env = loadEnv(import.meta.env.MODE, process.cwd(), "");
@@ -28,7 +28,7 @@ export default defineConfig({
 		 * @see https://github.com/Thinkmill/keystatic/discussions/951
 		 */
 		react({
-			include: ["**/content/**", "**/keystatic/**"],
+			include: ["**/content/**/*.@(jsx|tsx)", "**/keystatic/**/*.@(jsx|tsx)"],
 		}),
 		sitemap(),
 	],

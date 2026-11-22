@@ -4,7 +4,6 @@ import {
 	withCustomHeadingIds,
 	withFootnotes,
 } from "@acdh-oeaw/mdx-lib";
-import withSyntaxHighlighter from "@shikijs/rehype";
 import type { ElementContent } from "hast";
 import withHeadingIds from "rehype-slug";
 import withFrontmatter from "remark-frontmatter";
@@ -13,7 +12,6 @@ import withMdxFrontmatter from "remark-mdx-frontmatter";
 import withTypographicQuotes from "remark-smartypants";
 
 import type { Locale } from "@/config/i18n.config";
-import { config as syntaxHighlighterConfig } from "@/config/syntax-highlighter.config";
 import { createI18n } from "@/lib/i18n";
 
 export async function createMdxConfig(locale: Locale): Promise<MdxProcessorOptions> {
@@ -57,11 +55,7 @@ export async function createMdxConfig(locale: Locale): Promise<MdxProcessorOptio
 			footnoteLabelProperties: { className: ["sr-only"] },
 			footnoteLabelTagName: "h2",
 		},
-		rehypePlugins: [
-			withCustomHeadingIds,
-			withHeadingIds,
-			[withSyntaxHighlighter, syntaxHighlighterConfig],
-		],
+		rehypePlugins: [withCustomHeadingIds, withHeadingIds],
 	};
 
 	return Promise.resolve(config);

@@ -1,0 +1,27 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"astro": true,
+	"endOfLine": "lf",
+	"ignorePatterns": ["content/**", "public/**", "pnpm-lock.yaml"],
+	"printWidth": 100,
+	"proseWrap": "always",
+	"semi": true,
+	"singleQuote": false,
+	"sortPackageJson": {
+		"sortScripts": true
+	},
+	"sortImports": {
+		"groups": [
+			["side_effect", "side_effect_style"],
+			"builtin",
+			"external",
+			["internal", "subpath"],
+			["parent", "sibling", "index"],
+			"style",
+			"unknown"
+		]
+	},
+	"tabWidth": 2,
+	"trailingComma": "all",
+	"useTabs": true
+}

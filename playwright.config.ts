@@ -1,12 +1,15 @@
 import { join } from "node:path";
 
 import { defineConfig, devices } from "@playwright/test";
-import { isCI } from "ci-info";
-import { config as dotenv } from "dotenv";
-import { expand } from "dotenv-expand";
+import isCI from "is-in-ci";
 
 for (const envFilePath of [".env.test.local", ".env.local", ".env.test", ".env"]) {
-	expand(dotenv({ path: join(process.cwd(), envFilePath) }));
+	/** Earlier files take precedence, because existing variables are not overwritten. */
+	try {
+		process.loadEnvFile(join(process.cwd(), envFilePath));
+	} catch (error) {
+		if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
+	}
 }
 
 const port = 3000;

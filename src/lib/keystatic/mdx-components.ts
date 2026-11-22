@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* oxlint-disable typescript/no-unsafe-assignment */
 
 import Img from "@/components/content/img.astro";
 import Link from "@/components/content/link.astro";
