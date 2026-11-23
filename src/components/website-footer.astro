@@ -11,24 +11,24 @@ const { t } = await createI18n(locale);
 	<section class="container border-t border-neutral-200 bg-neutral-100 py-2 text-center text-xs text-neutral-700">
 		<div>
 			<span>
-				&copy;
+				&copy;{" "}
 				<a class="underline transition hover:no-underline" href="https://www.oeaw.ac.at/acdh">
 					ACDH
-				</a>
+				</a>{" "}
 				{new Date().getUTCFullYear()}
-			</span>{" "}
-			|
+			</span>
+			{" | "}
 			<Link class="underline transition hover:no-underline" href="/imprint">
 				{t("WebsiteFooter.links.imprint")}
-			</Link>{" "}
-			|
+			</Link>
+			{" | "}
 			<a
 				class="underline transition hover:no-underline"
 				href="https://github.com/acdh-oeaw/rest-in-peace-service"
 			>
 				{t("WebsiteFooter.links.repo")}
-			</a>{" "}
-			|
+			</a>
+			{" | "}
 			<Link class="underline transition hover:no-underline" href="/feed.xml">
 				{t("WebsiteFooter.links.feed")}
 			</Link>
