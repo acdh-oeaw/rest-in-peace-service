@@ -20,11 +20,11 @@ export async function GET(context: APIContext) {
 		site: context.site!,
 		/** @see https://docs.astro.build/en/guides/rss/#generating-items */
 		items: tombstones.map((tombstone) => {
-			const { title, publicationDate } = tombstone.data;
+			const { title, deprecationDate } = tombstone.data;
 
 			return {
 				title,
-				pubDate: new Date(publicationDate),
+				pubDate: new Date(deprecationDate),
 				link: withBasePath(`/tombstones/${tombstone.id}`),
 			};
 		}),

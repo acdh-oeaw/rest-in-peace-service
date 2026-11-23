@@ -26,11 +26,6 @@ export const createTombstones = createCollection("/tombstones/", (paths) => {
 				label: "Short title",
 				validation: { isRequired: false },
 			}),
-			publicationDate: fields.date({
-				label: "Publication date",
-				validation: { isRequired: true },
-				defaultValue: { kind: "today" },
-			}),
 			url: fields.url({
 				label: "URL",
 				validation: { isRequired: true },

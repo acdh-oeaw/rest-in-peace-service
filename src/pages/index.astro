@@ -16,9 +16,16 @@ const { t } = await createI18n(locale);
 const formatter = getFormatter(locale);
 
 const page = await createSingletonResource("index-page", locale).read();
+function getDisplayTitle(tombstone: (typeof _tombstones)[number]): string {
+	return tombstone.data.shortTitle?.trim() || tombstone.data.title;
+}
+
 const _tombstones = await createCollectionResource("tombstones", locale).all();
 const tombstones = _tombstones.sort((a, z) => {
-	return compareDesc(new Date(a.data.publicationDate), new Date(z.data.publicationDate));
+	return (
+		compareDesc(new Date(a.data.deprecationDate), new Date(z.data.deprecationDate)) ||
+		getDisplayTitle(a).localeCompare(getDisplayTitle(z), locale)
+	);
 });
 
 const documentTitle = t("IndexPage.meta.title");
@@ -59,7 +66,7 @@ const { hero } = page.data;
 												class="after:absolute after:inset-0 after:size-full after:transition after:hover:bg-black/5"
 												href={`/tombstones/${tombstone.id}`}
 											>
-												{tombstone.data.shortTitle?.trim() || tombstone.data.title}
+												{getDisplayTitle(tombstone)}
 											</a>
 										</h2>
 										<div class="text-neutral-600">
